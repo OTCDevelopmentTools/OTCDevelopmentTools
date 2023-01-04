@@ -7,9 +7,9 @@
 
 <p align="left"> <a href="https://twitter.com/odetocloud" target="blank"><img src="https://img.shields.io/twitter/follow/odetocloud?logo=twitter&style=for-the-badge" alt="odetocloud" /></a> </p>
 
-- 🔭 I’m currently working on **Web API projects**
+- 🔭 We’re currently working on **WPF, Dot Net Core, Angular and Web API projects**
 
-- 🌱 I’m currently learning **Angular 14, React Native**
+- 🌱 We’re currently learning **Angular 14, React Native and C#7**
 
 - 👨‍💻 All of my projects are available at [https://github.com/OTCDevelopmentTools](https://github.com/OTCDevelopmentTools)
 
