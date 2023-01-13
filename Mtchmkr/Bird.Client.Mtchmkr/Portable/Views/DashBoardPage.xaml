@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.DashBoardPage"
+             xmlns:telerikCommon="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+xmlns:telerikGauges="clr-namespace:Telerik.XamarinForms.DataVisualization.Gauges;assembly=Telerik.XamarinForms.DataVisualization"
+             Title="Dashboard">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Standard Mode" Command="{Binding StandardModeCommand}"   />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <Grid ColumnDefinitions="*,*" RowDefinitions="auto,auto" Margin="0,100">
+            <telerikGauges:RadRadialGauge Grid.Column="1" x:Name="gauge2"
+                              Margin="2"
+                              AxisRadiusFactor="1"
+                              StartAngle="90"
+                              SweepAngle="360">
+                <telerikGauges:RadRadialGauge.Axis>
+                    <telerikGauges:GaugeLinearAxis Maximum="100"
+                                       Minimum="0"
+                                       ShowLabels="False"
+                                       StrokeThickness="0" TextColor="Black"/>
+                </telerikGauges:RadRadialGauge.Axis>
+                <telerikGauges:RadRadialGauge.Ranges>
+                    <telerikGauges:GaugeRangesDefinition EndThickness="1"
+                                             StartThickness="1"
+                                             Offset="0">
+                        <telerikGauges:GaugeRange Color="#FFDD789B"
+                                      From="0"
+                                      To="25" />
+                        <telerikGauges:GaugeRange Color="#FFAAC271"
+                                      From="25"
+                                      To="50" />
+                        <telerikGauges:GaugeRange Color="#FF4062AD"
+                                      From="50"
+                                      To="75" />
+                    </telerikGauges:GaugeRangesDefinition>
+                </telerikGauges:RadRadialGauge.Ranges>
+                <telerikGauges:RadRadialGauge.Indicators>
+                    <telerikGauges:GaugeBarIndicator EndCap="Oval"
+                                         EndThickness="10"
+                                         Fill="#FFDD789B"
+                                         StartThickness="10"
+                                         Offset="3"
+                                         Value="12.5" />
+                    <telerikGauges:GaugeBarIndicator EndCap="Oval"
+                                         EndThickness="10"
+                                         Fill="#FFAAC271"
+                                         StartThickness="10"
+                                         Offset="15"
+                                         Value="37.5" />
+                    <telerikGauges:GaugeBarIndicator EndCap="Oval"
+                                         EndThickness="10"
+                                         Fill="#FF4062AD"
+                                         StartThickness="10"
+                                         Offset="27"
+                                         Value="62.5" />
+                    <telerikGauges:GaugeShapeIndicator Fill="#FF4062AD"
+                                           Position="Start"
+                                           Offset="39"
+                                           Value="56" />
+                    <telerikGauges:GaugeNeedleIndicator Fill="#FFAAC271"
+                                            Offset="51"
+                                            Value="37.5" />
+                </telerikGauges:RadRadialGauge.Indicators>
+            </telerikGauges:RadRadialGauge>
+
+            <telerikGauges:RadRadialGauge x:Name="gauge">
+                <telerikGauges:RadRadialGauge.Axis>
+                    <telerikGauges:GaugeLinearAxis Maximum="200"
+                                       Minimum="0"
+                                       Step="25" TextColor="Black"/>
+                </telerikGauges:RadRadialGauge.Axis>
+                <telerikGauges:RadRadialGauge.Indicators>
+                    <telerikGauges:GaugeNeedleIndicator Offset="30" Value="60" />
+                </telerikGauges:RadRadialGauge.Indicators>
+                <telerikGauges:RadRadialGauge.Ranges>
+                    <telerikGauges:GaugeRangesDefinition>
+                        <telerikGauges:GaugeRange Color="Green"
+                                      From="0"
+                                      To="150" />
+                        <telerikGauges:GaugeGradientRange From="150" To="200">
+                            <telerikCommon:RadGradientStop Offset="150" Color="Yellow" />
+                            <telerikCommon:RadGradientStop Offset="200" Color="Red" />
+                        </telerikGauges:GaugeGradientRange>
+                    </telerikGauges:GaugeRangesDefinition>
+                </telerikGauges:RadRadialGauge.Ranges>
+            </telerikGauges:RadRadialGauge>
+            <Label Grid.Row="1" Text="Current Users" HorizontalOptions="Center" TextColor="Black"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="Platform Users" HorizontalOptions="Center" TextColor="Black"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

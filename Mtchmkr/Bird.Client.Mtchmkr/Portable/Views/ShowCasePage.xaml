@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.ShowCasePage"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:CircleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:TelerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             xmlns:model="clr-namespace:Bird.Client.Mtchmkr.Portable.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             x:Name="ShowCase"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <v:Header FirstName="Show" LastName="Case" Caption="Please select any MTCHs you wish to play in..." />
+            <CollectionView Grid.Row="1" ItemsSource="{Binding ShowCaseItemSource}" Margin="0,10">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <sh:Shadows >
+                            
+                        <yummy:PancakeView VerticalOptions="FillAndExpand" WidthRequest="300" CornerRadius="20">
+                                <Grid>
+                                <Image Source="{Binding GameImage}" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="Fill" />
+                                <Grid HorizontalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="300" />
+                                    </Grid.ColumnDefinitions>
+                                    <BoxView IsVisible="true"  Grid.RowSpan="7" Grid.Row="2" >
+                                        <BoxView.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                <GradientStop Color="Transparent" Offset="0.1" />
+                                                <GradientStop Color="Black" Offset="1.5" />
+                                                <GradientStop Color="Black" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </BoxView.Background>
+                                    </BoxView>
+                                    <CircleImage:CircleImage Source="{Binding PlayerImage}" HeightRequest="80" WidthRequest="80" Aspect="AspectFill" BorderColor="#00C6AE" BorderThickness="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <TelerikInput:RadShapeRating Grid.Row="1" ItemStroke="White" IsReadOnly="True" HorizontalOptions="Center" HeightRequest="20" Value="{Binding rating}" />
+                                    <StackLayout Grid.Row="2">
+                                        <Label Text="{Binding name}"  FontSize="32" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" />
+                                        <Label Text="{Binding gameName}"  FontSize="32" HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" />
+
+                                        <Label Text="{Binding frames}" Grid.Row="2" FontSize="24" HorizontalOptions="Center" TextColor="White" FontAttributes="Italic" />
+                                    </StackLayout>
+                                        <!--<Label Grid.Row="3" Margin="0,0,0,0" TextColor="White" FontSize="40" VerticalTextAlignment="Start" HorizontalTextAlignment="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="{Binding DayName}" FontSize="28" FontAttributes="Bold"/>
+                                                        <Span Text=" " FontSize="Medium" FontAttributes="None"/>
+                                                        <Span Text="{Binding Day}" FontSize="Medium" FontAttributes="None"/>
+                                                        <Span Text="{Binding OccuranceSuffix}" FontAttributes="Italic" FontSize="Small" />
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>-->
+                                    <Label Text="{Binding date, StringFormat='{0:hh:mm tt}'}" Grid.Row="4" FontSize="24" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" />
+                                        <Label Text="{Binding location}" Grid.Row="5" FontSize="22" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" />
+
+                                        <!-- -->
+                                        <Button Text="Play" Grid.Row="6" WidthRequest="70" HeightRequest="40"  Style="{StaticResource FollowButton}" HorizontalOptions="Center" 
+                                                Command="{Binding Source={x:Reference ShowCase} , Path=BindingContext.BookCommand}" CommandParameter="{Binding .}" />
+                                        
+                                    </Grid>
+                            </Grid>
+                        </yummy:PancakeView>
+                        </sh:Shadows>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoDataView}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="nodata.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+                <Label Grid.Row="1" Text="No Data Found" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

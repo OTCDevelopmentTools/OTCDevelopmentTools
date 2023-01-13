@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Bird.Client.Mtchmkr.Portable.Views.WalletPage"
+    Title="Wallet">
+    <ContentPage.Content>
+        <Grid>
+            <ListView Grid.Row="0" x:Name="MyListView"
+                            ItemsSource="{Binding PaymentInfoItemsSource}"
+                          HasUnevenRows="true" SeparatorVisibility="None"
+                            CachingStrategy="RecycleElement">
+                    <!--Built in Cells-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0" Grid.Column="0" Text="Transaction Id :" FontAttributes="Bold"/>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding transactionId}" />
+
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Payment $:" FontAttributes="Bold"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding payment}" />
+
+                                    <Label Grid.Row="2" Grid.Column="0" Text="Match :" FontAttributes="Bold"/>
+                                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding matchCount}" />
+                                
+                                    <BoxView Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="Silver" HeightRequest="0.5" VerticalOptions="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+    
+                  </ListView>
+
+                <Grid Grid.Row="0" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoDataView}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Source="nodata.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="No Data Found" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </Grid>
+
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.PlayersPage"
+             Title="{Binding Title}" 
+             IconImageSource="Events.png"
+             xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.ViewModels"  
+             xmlns:model="clr-namespace:Bird.Client.Mtchmkr.Portable.Models"  
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             NavigationPage.HasNavigationBar="False"
+
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Request Match"  Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <RefreshView x:DataType="local:PlayersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="Multiple" >
+            <CollectionView.ItemTemplate >
+                <DataTemplate >
+                    <Grid  x:DataType="model:PlayerModel" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <xct:BadgeView BackgroundColor="Red" Text="100" TextColor="White">
+                            <xct:AvatarView Text="{Binding Initials}" Color="{Binding Colour}" Margin="2,10" TextColor="White" WidthRequest="70" HeightRequest="70" Source="{Binding PlayerImage}" Grid.Column="0" />
+                        </xct:BadgeView>
+                        <StackLayout Padding="10" Grid.Column="1" >
+                        <Label Text="{Binding Text}" TextColor="Black"
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                               FontAttributes="Bold"
+                            FontSize="16" />
+                        <Label Text="{Binding PlayerDescription}" TextColor="Black"
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+
+                        </StackLayout >
+                        <StackLayout Orientation="Horizontal" Grid.Column="2">
+                            <ImageButton Source="HeartOutline.png" Aspect="AspectFit" WidthRequest="20" BackgroundColor="Transparent" />
+                            <Switch HorizontalOptions="End"  Grid.Column="2"></Switch>
+                        </StackLayout>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:PlayersViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

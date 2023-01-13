@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Repositories\" />
+    <None Remove="ServiceCenter\" />
+    <None Remove="ServiceCenter\Request\" />
+    <None Remove="ServiceCenter\Response\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Xamarin.Forms" />
+    <None Remove="Plugin.FirebasePushNotification" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="ServiceCenter\" />
+    <Folder Include="ServiceCenter\Request\" />
+    <Folder Include="ServiceCenter\Response\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+  </ItemGroup>
+</Project>

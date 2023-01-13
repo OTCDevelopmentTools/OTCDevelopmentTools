@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+       Title="Bird.Client.Mtchmkr"
+       xmlns:core="clr-namespace:System.Dynamic;assembly=System.Core"
+       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+       x:Class="Bird.Client.Mtchmkr.Portable.AdminShell"
+   xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+       xmlns:badge="clr-namespace:Xam.Shell.Badge;assembly=Xam.Shell.Badge"
+           xmlns:Helpers="clr-namespace:Bird.Client.Mtchmkr.Helpers">
+        
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Black" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Black" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource GoldenColor}"/>
+                <!--                <Setter Property="Shell.NavBarIsVisible" Value="False"/> -->
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style x:Key="LoginStyle" TargetType="local:LoginPage" BasedOn="{StaticResource BaseStyle}" >
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Dashboard" Icon="Dashboard.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Dashboard" Icon="Dashboard.png" Route="DashBoardPage" ContentTemplate="{DataTemplate local:DashBoardPage}" />
+        </Tab>
+        <Tab Title="Venues" Icon="Venue.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Venues" Icon="Venue.png" Route="VenuesPage" ContentTemplate="{DataTemplate local:VenuesPage}" />
+        </Tab>
+        <Tab Title="Tools" Icon="Tools.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Tools" Icon="Tools.png" Route="ToolsPage" ContentTemplate="{DataTemplate local:ToolsPage}" />
+        </Tab>
+    </TabBar>
+</Shell>

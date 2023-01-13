@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.RequestsPage"
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             xmlns:vm="clr-namespace:Bird.Client.Mtchmkr.Portable.ViewModels"
+             xmlns:model="clr-namespace:Bird.Client.Mtchmkr.Portable.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Pending MTCHs">
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!-- Header-->
+                <RowDefinition Height="120"></RowDefinition>
+                <!-- Main Content-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--     <BoxView BackgroundColor="Red" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="1" ></BoxView> -->
+            <v:Header FirstName="MTCHs " LastName="Requested" Caption="Please confirm the games you wish to play..." />
+
+            <!--<RefreshView Grid.Row="1" x:DataType="vm:RequestsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding PendingMatchSource}"
+                               
+                SelectionMode="Multiple" Margin="5">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate >
+                            <yummy:PancakeView x:DataType="model:RequestModel"  Margin="0" CornerRadius="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <yummy:PancakeView.Border>
+                                    <yummy:Border Thickness="2" Color="Gray" />
+                                </yummy:PancakeView.Border>
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <BoxView BackgroundColor="{Binding Colour}" WidthRequest="5" Margin="0" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <xct:Expander Grid.Column="1" x:DataType="model:RequestModel" IsExpanded="{Binding Expanded, Mode=TwoWay}" >
+                                        <xct:Expander.Header >
+                                            <Grid RowSpacing="0" x:DataType="model:RequestModel" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                                    <ColumnDefinition Width="80"></ColumnDefinition>
+                                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <BoxView BackgroundColor="Red" IsVisible="false" Grid.Column="3" />
+                                                <Label HorizontalOptions="Center" Text="{Binding Day}" TextColor="Black" VerticalOptions="CenterAndExpand"  FontAttributes="Bold" FontSize="24" />
+                                                <Label Grid.Row="1"  Text="{Binding ShortDate}" TextColor="Black" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" />
+                                                <Label Grid.Column="2" Margin="0,4" VerticalOptions="Center" Text="{Binding Name}" TextColor="Black" FontSize="24" FontAttributes="Bold"/>
+
+                                                <Label Grid.Column="2" Grid.Row="1"  Text="{Binding Game}" TextColor="Black" FontSize="22"/>
+                                                <xct:AvatarView Grid.Column="1" Grid.RowSpan="2" Text="{Binding Initials}" BorderColor="{Binding Colour}" Color="{Binding Colour}" 
+                                                   HorizontalOptions="Center" VerticalOptions="Start" Margin="0,3" TextColor="Red" Size="70" Source="{Binding Image}"/>
+                                                <telerikInput:RadShapeRating HorizontalOptions="Center" Margin="0,5" VerticalOptions="End" IsReadOnly="True" ItemsSpacing="2" 
+                                                                  Grid.Column="1" Grid.Row="1" HeightRequest="10" Value="{Binding Rating}" />
+
+                                                <Image Grid.Column="3" xct:IconTintColorEffect.TintColor="{StaticResource Primary}" HeightRequest="50" Source="DownChevron.png" />
+                                            </Grid>
+                                        </xct:Expander.Header>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Button Text="Cancel"  VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="Transparent" BorderColor="{StaticResource Primary}" BorderWidth="1" CornerRadius="20" Margin="20,10,10,0" Style="{StaticResource LabelButton}" />
+                                            <Button Text="Book Now" VerticalOptions="Center" HorizontalOptions="Fill" Style="{StaticResource LabelButton}" Grid.Column="1" BackgroundColor="Transparent" BorderColor="{StaticResource Primary}" BorderWidth="1" CornerRadius="20" Margin="20,10,10,0"  />
+                                        </Grid>
+                                    </xct:Expander>
+
+                                </Grid>
+                                
+                            </yummy:PancakeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                 </CollectionView>
+                </RefreshView>-->
+
+            <ListView Grid.Row="1" x:Name="MyListView"
+                        ItemsSource="{Binding PendingMatchSource}"
+                      HasUnevenRows="true" SeparatorVisibility="None"
+                        CachingStrategy="RecycleElement">
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <imagecircle:CircleImage Grid.Row="0" Grid.Column="0"
+                                    BorderColor="Red"
+                                    BorderThickness="2"  
+                                    Source="{Binding PlayerImage}"
+                                    Visual="Default"
+                                    HeightRequest="60"
+                                    VerticalOptions="Center"  
+                                    Aspect="AspectFit"
+                                    BackgroundColor="Red"
+                                    WidthRequest="60" Margin="5"/>
+
+                                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" Margin="10">
+                                    <Label Text="{Binding name}" HorizontalOptions="Start" />
+                                    <Label Text="{Binding gameName}" HorizontalOptions="Start" />
+                                    <Label Text="{Binding matchDate}" HorizontalOptions="Start" />
+                                </StackLayout>
+
+                                <Button Grid.Row="1" Text="Play Now"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Fill"
+                                        Style="{StaticResource LabelButton}"
+                                        Grid.Column="0" Grid.ColumnSpan="2"
+                                        BackgroundColor="Transparent"
+                                        BorderColor="{StaticResource Primary}"
+                                        BorderWidth="1" CornerRadius="20"
+                                        Margin="20,10,10,0"
+                                        Command="{Binding Source={x:Reference Name=MyListView}, Path=BindingContext.PlayNowCommand}"
+                                        CommandParameter="{Binding .}"
+                                        />
+                                
+                                <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="Silver" HeightRequest="0.5" VerticalOptions="End"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+    
+              </ListView>
+
+            <Grid Grid.Row="1" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoDataView}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="nodata.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+                <Label Grid.Row="1" Text="No Data Found" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
+
+             </Grid>
+    </ContentPage.Content>
+</ContentPage>

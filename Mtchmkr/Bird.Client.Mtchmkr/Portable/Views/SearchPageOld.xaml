@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.SearchPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+        
+               >
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- Header-->
+                <RowDefinition Height="100"></RowDefinition>
+               <!-- Main Content-->
+                <RowDefinition Height="*" />
+                <!--Button-->
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--#region Title-->
+            <Grid BackgroundColor="{StaticResource Primary}" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Margin="0,-40,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label TextColor="White" FontSize="40" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Search " FontSize="40" FontAttributes="Bold"/>
+                                    <Span Text="Players"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="'Please input the criteria your interested in...'" TextColor="White" FontSize="15" HorizontalTextAlignment="Center" Margin="0,-10,0,0"/>
+                </StackLayout>
+                <Image Source="CurvedMask.png" Aspect="Fill" HorizontalOptions="Fill" VerticalOptions="End" />
+            </Grid>
+            <BoxView BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Grid.Row="1"></BoxView>
+            <!--#endregion Title-->
+            <!--
+            <Grid BackgroundColor="Red" Margin="10,0,10,0"  Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>                    
+                    <RowDefinition Height="Auto"></RowDefinition>                   
+                    <RowDefinition Height="Auto"></RowDefinition>                   
+                    <RowDefinition Height="Auto"></RowDefinition>                   
+                    <RowDefinition Height="Auto"></RowDefinition>                  
+                    <RowDefinition Height="Auto"></RowDefinition>                  
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+            -->
+            <!--#region Game-->
+                <!--
+                <StackLayout Grid.Row="0">
+                    <Label Text="Game (any)" FontAttributes="Bold"></Label>
+                    <telerikInput:RadComboBox SelectionMode="Multiple">
+                        <telerikInput:RadComboBox.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Pool</x:String>
+                                <x:String>Snooker</x:String>
+                                <x:String>Billiards</x:String>
+                            </x:Array>
+                        </telerikInput:RadComboBox.ItemsSource>
+                    </telerikInput:RadComboBox>
+                </StackLayout>
+                -->
+                <!--#endregion Game-->
+                <!--#region Name-->
+                <!--
+                <StackLayout BackgroundColor="Red" Grid.Row="2">
+                <Label Text="Name" FontAttributes="Bold"></Label>
+                <SearchBar Placeholder="Search items..."
+                       CancelButtonColor="Orange"
+                       PlaceholderColor="Orange"
+                       TextColor="{StaticResource Primary}"
+                       TextTransform="Lowercase"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Medium"
+                       FontAttributes="Italic" />
+                </StackLayout>
+                -->
+                <!--#endregion Name-->
+                
+                <!--#region Skills-->
+                <!--
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Skills (Rating)" FontAttributes="Bold" Grid.ColumnSpan="2" Grid.Column="0"></Label>
+                    <Label Grid.Row="1" Text="Minimum" />
+                    <telerikInput:RadShapeRating  HeightRequest="20" Grid.Column="1" Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Value="{Binding Minimum, Mode=TwoWay}"/>
+                    <Label Grid.Row="2" Text="Maximum" />
+                    <telerikInput:RadShapeRating  HeightRequest="20" Grid.Column="1" Grid.Row="2" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Value="{Binding Maximum, Mode=TwoWay}"/>
+                </Grid>
+                -->
+                <!--#endregion Skills-->
+                <!--#region Game Type-->
+                <Label Text="Game Type" FontAttributes="Bold" />
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <RadioButton GroupName="Type" ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="Friendly" IsChecked="{Binding IsFriendly}" />
+                    <RadioButton GroupName="Type" ControlTemplate="{StaticResource ThemeRadioTemplate}" Grid.Column="1" Content="Cash" IsChecked="{Binding IsCash}" />
+                </Grid>
+                <!--#endregion Game Type-->
+                <!--#region Game Length-->
+                <Label Text="Game Length" FontAttributes="Bold" />
+                <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
+                    <RadioButton GroupName="Length" ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="Quick" IsChecked="{Binding ShortGame}" />
+                    <RadioButton GroupName="Length" ControlTemplate="{StaticResource ThemeRadioTemplate}" Grid.Column="1" Content="Medium" IsChecked="{Binding MediumGame}" />
+                    <RadioButton GroupName="Length" ControlTemplate="{StaticResource ThemeRadioTemplate}" Grid.Column="2" Content="Long" IsChecked="{Binding LongGame}" />
+                    <RadioButton GroupName="Length" ControlTemplate="{StaticResource ThemeRadioTemplate}" Grid.Column="3" Content="Any" IsChecked="{Binding AnyGame}" />
+                </Grid>
+                <!--#endregion Game Length-->
+                
+                <!--#region Distanmce-->
+                <!--
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Distance" FontAttributes="Bold" />
+                    <Label Margin="0,0,0,0" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{Binding Distance}" FontAttributes="Bold"/>
+                                    <Span Text=" Miles" FontAttributes="Italic"/>
+                                    <Span Text=" From "  FontAttributes="Bold"/>
+                                    <Span Text="CM13 1AE" FontAttributes="None"/>
+                                   
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Grid.Column="2" Text="Change"/>
+                    <Slider MaximumTrackColor="{StaticResource Primary}" MinimumTrackColor="{StaticResource Primary}" Margin="5" ThumbColor="{StaticResource Primary}" Grid.Row="2" Value="{Binding Distance}" Grid.ColumnSpan="3" Minimum="0" Maximum="100" HorizontalOptions="FillAndExpand"/>
+                </Grid>
+                -->
+                <!--#endregion Distance-->
+                <Button Text="Search"  Grid.Row="6" Grid.ColumnSpan="3"  Style="{StaticResource FollowButton}" Margin="20" />
+            </Grid>
+       <!-- </Grid>    -->  
+  </ContentPage.Content>
+</ContentPage>

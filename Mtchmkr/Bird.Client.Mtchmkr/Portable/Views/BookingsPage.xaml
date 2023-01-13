@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Booked MTCHs"
+            xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.BookingsPage">
+    <ContentPage.Resources>
+        <Style x:Key="TitleLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Start" />
+        </Style>
+        <Style x:Key="DetailLabel" TargetType="Label">
+            <Setter Property="TextColor" Value="#5B5D5F" />
+            <Setter Property="FontSize" Value="Micro" />
+            <Setter Property="HeightRequest" Value="25" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="LineBreakMode" Value="TailTruncation" />
+        </Style>
+        <DataTemplate x:Key="CustomAppointmentTemplate">
+            <StackLayout Padding="5" BackgroundColor="{Binding Color}">
+                <Label Text="{Binding Title}" Style="{StaticResource TitleLabel}" />
+                <StackLayout Orientation="Horizontal" Margin="0,10, 0, 0">
+                    <Label Text="Trainer: " Style="{StaticResource DetailLabel}" />
+                    <Label Text="{Binding Detail}" Style="{StaticResource DetailLabel}" />
+                </StackLayout>
+            </StackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <telerikInput:RadCalendar x:Name="calendar" ViewMode="{Binding CalendarViewMode}" AppointmentsSource="{Binding Collection}"
+                          SchedulingUiEnabled="false" WeekNumbersDisplayMode="Show">
+
+                <telerikInput:RadCalendar.MultiDayViewSettings>
+                    <telerikInput:MultiDayViewSettings VisibleDays="3"
+                             SpecialSlotsSource="{Binding RestHours}" />
+                </telerikInput:RadCalendar.MultiDayViewSettings>
+                <telerikInput:RadCalendar.AgendaViewSettings>
+                    <telerikInput:AgendaViewSettings MonthItemFormat="YYYY MMM"
+                                         WeekItemStartDateFormat="dd MMMM"
+                                         WeekItemEndDateFormat="dd"
+                                         DayItemFormat="EEE d MMM"
+                                         AppointmentItemTimeFormat="HH mm"
+                                         AppointmentItemEndDateFormat="MMM d"
+                                         AppointmentItemStartDateFormat="MMM d" 
+                                         IsHeaderSticky="True" 
+                                         StickyHeaderFormat="YYYY MMM"/>
+                </telerikInput:RadCalendar.AgendaViewSettings>
+            </telerikInput:RadCalendar>
+            <Grid Margin="5,0,10,0" Grid.Row="1" ColumnDefinitions="Auto,*">
+                <Label VerticalOptions="Center" FontAttributes="Bold" Text="View" TextColor="Black"/>
+                <telerikInput:RadComboBox Grid.Column="1" x:Name="ViewType" SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                        BorderColor="{StaticResource Primary}" TextColor="Black"
+                                          BorderThickness="1"  SelectionMode="Single" ItemsSource="{Binding ViewTypes}" DropDownBorderThickness="1" DropDownBorderColor="Black" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

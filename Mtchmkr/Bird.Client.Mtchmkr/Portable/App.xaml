@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input.Calendar;assembly=Telerik.XamarinForms.Input"
+             x:Class="Bird.Client.Mtchmkr.Portable.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <LinearGradientBrush x:Key="NewBlueGradient" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Aqua" Offset="0.1" />
+                <GradientStop Color="Blue" Offset="1.0" />
+            </LinearGradientBrush>
+
+
+            <Color x:Key="LightRadioButtonColor">Transparent</Color>
+            <Color x:Key="DarkRadioButtonColor">#9B9A99</Color>
+            <Color x:Key="GoldenColor">#DAA520</Color>
+
+            <ControlTemplate x:Key="ThemeRadioTemplate">
+                <Frame
+                    Padding="0"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                                      Light={StaticResource LightRadioButtonColor}}"
+                    BorderColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                                  Light={StaticResource LightRadioButtonColor}}"
+                    HasShadow="False"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    WidthRequest="80">
+                    <Grid Margin="1" WidthRequest="80">
+                        <Grid
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start"
+                            WidthRequest="40">
+                            <Ellipse
+                                Fill="White"
+                                HeightRequest="18"
+                                HorizontalOptions="Center"
+                                Stroke="#2E2545"
+                                StrokeThickness="1"
+                                VerticalOptions="Center"
+                                WidthRequest="18" />
+                            <Ellipse
+                                x:Name="Check"
+                                BackgroundColor="Transparent"
+                                Fill="{StaticResource Primary}"
+                                HeightRequest="10"
+                                HorizontalOptions="Center"
+                                Stroke="{StaticResource Primary}"
+                                StrokeThickness="0"
+                                VerticalOptions="Center"
+                                WidthRequest="10" />
+                        </Grid>
+                        <!-- This enables us to put in dynamic content -->
+                        <ContentPresenter />
+                    </Grid>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter Property="BorderColor" Value="#df6e57" />
+                                        <Setter TargetName="Check" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter Property="BorderColor" Value="#F3F2F1" />
+                                        <Setter TargetName="Check" Property="Opacity" Value="0" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Frame>
+            </ControlTemplate>
+
+
+            <Color x:Key="Primary">#455399</Color>
+            <!-- Application resource dictionary -->
+            <Color x:Key="Secondary">#FFC107</Color>
+            <Color x:Key="PrimaryDark">#FFA000</Color>
+            <Color x:Key="Accent">#00BCD4</Color>
+            <Color x:Key="TextColour">White</Color>
+            <!--  colors  -->
+            <Color x:Key="HeaderTextColor">#585858</Color>
+            <Color x:Key="BodyTextColor">#C3C3C3</Color>
+            <Color x:Key="ButtonBackgroundColor">#5992FF</Color>
+            <Color x:Key="BackgroundColor">#F3F5F9</Color>
+            <Color x:Key="Warning">Red</Color>
+
+
+            <!--      <Color x:Key="BackgroundColor">#F3F5F9</Color> -->
+            <!--  font families  -->
+            <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue</On>
+                <On Platform="Android">sans-serif</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="LightFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue-Light</On>
+                <On Platform="Android">sans-serif-light</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="MediumFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">HelveticaNeue-Medium</On>
+                <On Platform="Android">sans-serif-medium</On>
+            </OnPlatform>
+
+            <!--  font sizes  -->
+            <x:Double x:Key="TitleFontSize">20</x:Double>
+            <x:Double x:Key="BodyFontSize">18</x:Double>
+            <x:Double x:Key="TagTextFontSize">18</x:Double>
+            <x:Double x:Key="StatsNumberFontSize">20</x:Double>
+            <x:String x:Key="StatsNumberFontAttributes">Bold</x:String>
+            <x:Double x:Key="StatsCaptionFontSize">16</x:Double>
+            <x:Double x:Key="ButtonFontSize">14</x:Double>
+
+            <!--  styles  -->
+            <Style x:Key="ProfileNameLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource HeaderTextColor}" />
+                <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="ProfileTagLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource TagTextFontSize}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="StatsNumberLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource HeaderTextColor}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontFamily" Value="{StaticResource LightFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource StatsNumberFontSize}" />
+            </Style>
+
+            <Style x:Key="StatsCaptionLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="Margin" Value="0,-5,0,0" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontFamily" Value="{StaticResource LightFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource StatsCaptionFontSize}" />
+            </Style>
+
+            <Style x:Key="MainBodyLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BodyTextColor}" />
+                <Setter Property="FontFamily" Value="{StaticResource RegularFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource BodyFontSize}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="FollowButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="TextColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="BorderRadius" Value="20" />
+                <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+            </Style>
+            <Style x:Key="LabelButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonBackgroundColor}" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="BorderRadius" Value="5" />
+                
+                <Setter Property="FontFamily" Value="{StaticResource MediumFontFamily}" />
+                <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+            </Style>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
+            </Style>
+            
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource GoldenColor}"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

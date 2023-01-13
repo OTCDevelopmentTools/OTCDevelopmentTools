@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+                  xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:views="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             Shell.NavBarIsVisible="False"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.SearchSettingsPage">
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!-- Header-->
+                <RowDefinition Height="120"></RowDefinition>
+                <!-- Main Content-->
+                <RowDefinition Height="*" />
+                <!--Button-->
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <views:Header FirstName="Search " LastName="Settings" Caption="Please input the default criteria for your searches" />
+
+            <Grid Margin="10,0,10,0"  Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--<views:PreferedGameView Grid.Row="0"/>
+
+                <views:SkillRatingView Grid.Row="1" />
+                <views:DistanceView Grid.Row="3" />
+                <views:GameLengthView Grid.Row="5" />-->
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

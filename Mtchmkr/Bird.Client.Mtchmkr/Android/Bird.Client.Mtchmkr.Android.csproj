@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C6EACD2-8DAD-4545-A29A-4360A044ED79}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bird.Client.Mtchmkr.Android</RootNamespace>
+    <AssemblyName>Bird.Client.Mtchmkr.Android</AssemblyName>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Xamarin.Android.Input">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.List">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.List.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Gauges">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Gauges.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Data">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Common">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Primitives">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.Android.Chart">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Barcode">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xam.Shell.Badge">
+      <Version>1.0.20</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="SkiaSharp" Version="2.88.1" />
+    <PackageReference Include="SkiaSharp.Views" Version="2.88.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.1" />
+    <PackageReference Include="AndHUD">
+      <Version>1.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.GoogleClient">
+      <Version>2.1.12</Version>
+    </PackageReference>
+    <PackageReference Include="Naxam.BrainTree.Droid">
+      <Version>3.15.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.PushNotification">
+      <Version>3.6.23</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Base">
+      <Version>118.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Maps">
+      <Version>118.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth">
+      <Version>118.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Wallet">
+      <Version>118.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DependencyServices\BaseUrl_Android.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="DependencyServices\ProgressDialogService.cs" />
+    <Compile Include="DependencyServices\AndroidPayService.cs" />
+    <Compile Include="MainApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\layout_splashscreen.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\splash_screen.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\splash_screen.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\splash_screen.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\splash_screen.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-hdpi\splash_screen.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\billiardsnew.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\NineBall.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\PoolNew.jpg">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\icon_google.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\xml\file_paths.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\placeholder.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\nodata.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_r.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\l_fg.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\l_fg.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\l_fg.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\l_fg.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\l_fg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\AB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Balls.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\BarBilliards.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\CurvedMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\EightBall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Events.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\HeaderBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\HeartOutline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\HeartWhole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\icon_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\icon_feed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\JB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\More.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Pending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Players.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Pool.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\ProfilePic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Snooker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\TermsAndConditions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\xamarin_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Forgot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Preferences.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\UnHappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Winner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\PaperWork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\HidePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\ShowPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\PadlockOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Games.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\SearchSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\RequestSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Lenny.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\LennyHenry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Tucker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\GameType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\sms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Venue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\DownChevron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\ShowCase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Snooker2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Pool2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portable\Bird.Client.Mtchmkr.Portable.csproj">
+      <Name>Bird.Client.Mtchmkr.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DependencyServices\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="Resources\xml\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\MmTermsNew.docx" />
+    <AndroidAsset Include="Assets\MmTermsNew.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="google-services.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

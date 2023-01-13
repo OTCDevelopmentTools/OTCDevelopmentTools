@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+       Title="Bird.Client.Mtchmkr"
+       xmlns:core="clr-namespace:System.Dynamic;assembly=System.Core"
+       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+       x:Class="Bird.Client.Mtchmkr.Portable.LoginShell"
+       xmlns:Helpers="clr-namespace:Bird.Client.Mtchmkr.Portable.Helpers;assembly=Bird.Client.Mtchmkr.Portable"
+   xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+ 
+       xmlns:badge="clr-namespace:Xam.Shell.Badge;assembly=Xam.Shell.Badge">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Black" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Black" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource GoldenColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource GoldenColor}"/>
+                <!--                <Setter Property="Shell.NavBarIsVisible" Value="False"/> -->
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style x:Key="LoginStyle" TargetType="local:LoginPage" BasedOn="{StaticResource BaseStyle}" >
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Login" Icon="Login.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Login" Icon="Login.png" Route="Login" ContentTemplate="{DataTemplate local:LoginPage}" />
+        </Tab>
+        <Tab Title="forgot Password" Icon="Forgot.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Forgot Password" Icon="Forgot.png" Route="ForgotPasswordPage" ContentTemplate="{DataTemplate local:ForgotPasswordPage}" />
+        </Tab>
+        <Tab Title="Register" Icon="Register.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Register" Icon="Register.png" Route="RegistrationPage" ContentTemplate="{DataTemplate local:RegistrationPage}" />
+        </Tab>
+
+        <Tab Title="Paperwork" Icon="PaperWork.png">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Register" Icon="PaperWork.png" Route="TermsPage" ContentTemplate="{DataTemplate local:TermsPage}" />
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Privacy" Icon="Privacy.png" Route="TermsPage" ContentTemplate="{DataTemplate local:PrivacyPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

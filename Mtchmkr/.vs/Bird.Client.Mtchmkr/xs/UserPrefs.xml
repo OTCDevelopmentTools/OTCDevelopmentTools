@@ -1,0 +1,47 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{6A94D056-C4AD-415B-ABEA-5EFF3E99F43C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs">
+    <Files>
+      <File FileName="Bird.Client.Mtchmkr/Android/MainApplication.cs" Line="31" Column="16" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/App.xaml.cs" />
+      <File FileName="Bird.Client.Mtchmkr/iOS/Info.plist" />
+      <File FileName="Bird.Client.Mtchmkr/iOS/AppDelegate.cs" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs" Line="20" Column="53" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Bird.Client.Mtchmkr" expanded="True">
+            <Node name="Bird.Client.Mtchmkr.Portable" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="LoginPage.xaml" expanded="True">
+                  <Node name="LoginPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="109" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Views/ScoreCardPageOld.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/Views/ScoreCardPageOld.xaml.cs" line="16" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/RegistationViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/RegistationViewModel.cs" line="238" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" relfile="Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" line="88" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" relfile="Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" line="102" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Views/PlayersPage.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/Views/PlayersPage.xaml.cs" line="20" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/SearchViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/SearchViewModel.cs" line="470" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="150" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="157" column="1" />
+      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="203" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

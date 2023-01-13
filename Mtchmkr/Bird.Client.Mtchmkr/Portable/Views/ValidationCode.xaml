@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.ValidationCode"
+             xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+  
+    <ContentView.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Margin="0,10" HorizontalOptions="Center" WidthRequest="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Yummy:PancakeView CornerRadius="10"  >
+                <Yummy:PancakeView.Border>
+                    <Yummy:Border Thickness="2" Color="{StaticResource Primary}" />
+                </Yummy:PancakeView.Border>
+                <Entry Grid.Column="0" HorizontalTextAlignment="Center" Text="{Binding Code1}" HorizontalOptions="Fill"/>
+            </Yummy:PancakeView>
+            <Yummy:PancakeView Grid.Column="1" CornerRadius="10" >
+                <Yummy:PancakeView.Border>
+                    <Yummy:Border Thickness="2" Color="{StaticResource Primary}" />
+                </Yummy:PancakeView.Border>
+                <Entry Grid.Column="0" HorizontalTextAlignment="Center" Text="{Binding Code2}" HorizontalOptions="Fill"/>
+            </Yummy:PancakeView>
+            <Yummy:PancakeView  Grid.Column="2" CornerRadius="10" >
+                <Yummy:PancakeView.Border>
+                    <Yummy:Border Thickness="2" Color="{StaticResource Primary}" />
+                </Yummy:PancakeView.Border>
+                <Entry Grid.Column="0" HorizontalTextAlignment="Center" Text="{Binding Code3}" HorizontalOptions="Fill"/>
+            </Yummy:PancakeView>
+            <Yummy:PancakeView Grid.Column="3" CornerRadius="10" >
+                <Yummy:PancakeView.Border>
+                    <Yummy:Border Thickness="2" Color="{StaticResource Primary}" />
+                </Yummy:PancakeView.Border>
+                <Entry Grid.Column="0" HorizontalTextAlignment="Center" Text="{Binding Code4}" HorizontalOptions="Fill"/>
+            </Yummy:PancakeView>
+        </Grid>
+            <Label TextColor="{StaticResource Primary}" Grid.Column="2" VerticalOptions="Center" HorizontalTextAlignment="Center" Text="Paste" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PasteCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <Button Grid.Row="1" Grid.Column="1" Text="Validate Code" Style="{StaticResource FollowButton}" />
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

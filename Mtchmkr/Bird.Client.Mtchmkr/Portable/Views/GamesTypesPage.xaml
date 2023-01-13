@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:view="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             mc:Ignorable="d"
+             Shell.NavBarHasShadow="False"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarIsVisible="False"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.GamesTypesPage">
+
+    <ContentPage.Content>
+        <Grid  RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <view:Header FirstName="Game " LastName="Selection" Caption="Select the games you are interested in..." />
+
+            <pv:PancakeView Grid.Row="1" Shadow="{pv:ShadowMarkup Color=#FF0000, Offset='10,10'}" CornerRadius="10" HeightRequest="80" Margin="0,-40,0,0" 
+                        HorizontalOptions="Center">
+                <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.RowSpan="2" WidthRequest="80" BackgroundColor="{StaticResource GoldenColor}"/>
+                    <BoxView Grid.Column="1" Grid.RowSpan="2" WidthRequest="80" BackgroundColor="White"/>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding Count}" TextColor="White" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Available" TextColor="White" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding Selected}" TextColor="#455399" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Selected" TextColor="#455399" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                    <BoxView Grid.Row="1" Grid.ColumnSpan="2" WidthRequest="73" HeightRequest="1" BackgroundColor="#F1F3F7" 
+                         HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <pv:PancakeView Grid.Row="1" HeightRequest="7" WidthRequest="7" 
+                                 CornerRadius="3.5" HorizontalOptions="Center" 
+                                VerticalOptions="Center" Margin="7">
+                        <pv:PancakeView.Border>
+                            <pv:Border Thickness="2" Color="#C9D6EF" />
+                        </pv:PancakeView.Border>
+                    </pv:PancakeView>
+                    <pv:PancakeView Grid.Row="1" Grid.Column="1" HeightRequest="7" WidthRequest="7" CornerRadius="3.5" HorizontalOptions="Center" 
+                                BackgroundColor="#C9D6EF" VerticalOptions="Center" Margin="7">
+                        <pv:PancakeView.Border>
+                            <pv:Border Thickness="2" Color="#C9D6EF" />
+                        </pv:PancakeView.Border>
+                    </pv:PancakeView>
+                </Grid>
+            </pv:PancakeView>
+            <Label Margin="0,5" Grid.Row="2" HorizontalOptions="Center" Text="You must have at least one Type of game selected " TextColor="{StaticResource Warning}" FontAttributes="Bold" IsVisible="{Binding IsEmpty}" />
+            <CollectionView Grid.Row="2" Margin="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        SelectionMode="None" ItemsSource="{Binding Collection}">
+                <CollectionView.Header>
+                    <Label Text="Games" TextColor="Black" FontSize="18" Margin="10"/>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0" BackgroundColor="White"  BorderColor="LightGray" CornerRadius="5" VerticalOptions="FillAndExpand" 
+                                    HorizontalOptions="FillAndExpand" HasShadow="True" xct:ShadowEffect.Opacity="0.4" >
+
+                            <Grid  Margin="-20"  VerticalOptions="Fill" HorizontalOptions="Fill">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView Grid.Column="0" Grid.RowSpan="1" BackgroundColor="{Binding Colour}" WidthRequest="3" HorizontalOptions="Fill" 
+                                                 VerticalOptions="FillAndExpand"/>
+                                <xct:Expander Grid.Column="1"  Grid.ColumnSpan="2">
+                                    <xct:Expander.Header>
+                                        <Grid Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image HorizontalOptions="Start" Grid.Column="0" WidthRequest="50" HeightRequest="50" Source="{Binding Image}" xct:CornerRadiusEffect.CornerRadius="5" Aspect="Fill"  />
+                                            <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center">
+                                                <Label Text="{Binding Name}" TextColor="Black" FontSize="27" 
+                                                   HorizontalOptions="Center"/>
+                                            </StackLayout>
+                                            <Switch HorizontalOptions="EndAndExpand" Grid.Column="2" IsToggled="{Binding Selected , Mode=TwoWay}"></Switch>
+                                        </Grid>
+                                    </xct:Expander.Header>
+                                    <StackLayout>
+                                        <Label Text="Description" FontAttributes="Bold" FontSize="Small"  />
+                                        <Label Text="{Binding Description}" TextColor="Black" FontSize="Small" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                                    </StackLayout>
+                                </xct:Expander>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>

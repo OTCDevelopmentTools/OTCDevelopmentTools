@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+       Title="Bird.Client.Mtchmkr"
+       xmlns:Common="clr-namespace:Bird.Client.Mtchmkr.Portable.Comon"
+       xmlns:core="clr-namespace:System.Dynamic;assembly=System.Core"
+       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+       x:Class="Bird.Client.Mtchmkr.AppShell"
+       FlyoutBackgroundColor ="{StaticResource GoldenColor}"
+       xmlns:Helpers="clr-namespace:Bird.Client.Mtchmkr.Portable.Helpers;assembly=Bird.Client.Mtchmkr.Portable"
+   xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+       xmlns:badge="clr-namespace:Xam.Shell.Badge;assembly=Xam.Shell.Badge" xmlns:helpers="clr-namespace:Bird.Client.Mtchmkr.Helpers">
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="Black" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource GoldenColor}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="Black" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource GoldenColor}"/>
+<!--                <Setter Property="Shell.NavBarIsVisible" Value="False"/> -->
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style x:Key="LoginStyle" TargetType="local:LoginPage" BasedOn="{StaticResource BaseStyle}" >
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+            </Style>
+            <x:Boolean x:Key="AdminTabVisible">False</x:Boolean>
+        </ResourceDictionary>
+    </Shell.Resources>
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <ContentView BackgroundColor="Black" HeightRequest="140">
+                <StackLayout>
+                    <imagecircle:CircleImage HeightRequest="80" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Start" Aspect="Fill" Source="JB.jpg" BorderThickness="5" BorderColor="{StaticResource BackgroundColor}" />
+
+                    <Label TextColor="{StaticResource GoldenColor}" Text="Settings" FontAttributes="Bold" FontSize="32" HorizontalOptions="Center" VerticalOptions="End" />
+                </StackLayout>
+            </ContentView>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <ContentView BackgroundColor="{StaticResource GoldenColor}">
+            <Grid Margin="10,0" ColumnDefinitions="0.2*,0.8*">
+                <Image xct:IconTintColorEffect.TintColor="{Binding Primary}" Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1" Text="{Binding Title}"
+                       FontAttributes="Italic" TextColor="Black"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+                </ContentView>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <ContentView BackgroundColor="{StaticResource GoldenColor}">
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image xct:IconTintColorEffect.TintColor="{Binding Primary}" Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic" TextColor="Black"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+                </ContentView>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <ContentView BackgroundColor="{StaticResource GoldenColor}"> 
+                </ContentView>          
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+    <FlyoutItem>
+        <Common:TabEx Title="Showcase"  Icon="ShowCase.png" Shell.NavBarHasShadow="False">
+            <ShellContent Title="Showcase" Icon="ShowCase.png" Route="ShowCasePage" ContentTemplate="{DataTemplate local:ShowCasePage}" />
+        </Common:TabEx>
+        <Tab Title="Profile" Icon="Events.png"
+             badge:Badge.BackgroundColor="Red"
+             badge:Badge.Text="5">
+            <ShellContent Title="Profile" Icon="Profile.png" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
+        </Tab>
+        <ShellContent Title="Search" Icon="Search.png" Route="Search" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Shop" Icon="Score.png" Route="Shop" ContentTemplate="{DataTemplate local:ShopPage}" />
+        <ShellContent Title="Score" Icon="Score.png" Route="Score" ContentTemplate="{DataTemplate local:ScoreCardPage}" />
+        <Tab Title="MTCHs" Icon="Calender.png" NavigationPage.IconColor="#00C6AE"  NavigationPage.HasNavigationBar="False"
+             badge:Badge.BackgroundColor="#00C6AE"
+             badge:Badge.Text="100">
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Pending" Icon="Calender.png" Route="RequestsPage" ContentTemplate="{DataTemplate local:RequestsPage}" />
+            <!--<ShellContent NavigationPage.HasNavigationBar="False" Title="Bookings" Icon="Calender.png" Route="BookingsPage" ContentTemplate="{DataTemplate local:BookingsPage}" />-->
+            <ShellContent NavigationPage.HasNavigationBar="False" Title="Played" Icon="Calender.png" Route="EventsPage3" ContentTemplate="{DataTemplate local:PlayedMatchesPage}" />
+
+        </Tab>
+    </FlyoutItem>
+    <MenuItem IconImageSource="Games.png" Text="My Games" Command="{Binding GameTypesCommand}"></MenuItem>
+    <MenuItem IconImageSource="Setting.png" Text="Preferences" Command="{Binding GameTypesCommand}"></MenuItem>
+    <MenuItem IconImageSource="SearchSettings.png"  Text="Search Settings" Command="{Binding SearchSettingsCommand}"></MenuItem>
+    <MenuItem IconImageSource="RequestSettings.png"  Text="Request Settings" Command="{Binding RequestSettingsCommand}"></MenuItem>
+    <!--<MenuItem IconImageSource="Setting.png"  Text="Settings"></MenuItem>-->
+    <MenuItem IconImageSource="Setting.png"  Text="Logout" Command="{Binding LogOutCommand}"></MenuItem>
+
+</Shell>

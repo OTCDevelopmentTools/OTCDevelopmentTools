@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Shop"
+    x:Class="Bird.Client.Mtchmkr.Portable.Views.ShopPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Wallet"
+                     Order="Primary"
+                     Priority="0" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0" HasShadow="False" CornerRadius="0" Grid.ColumnSpan="3" HeightRequest="50" Padding="1" BorderColor="#DAA520" BackgroundColor="Black">
+                <Label Text="Shop" VerticalOptions="Center" TextColor="#DAA520" HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="0" HasShadow="False" HeightRequest="120" WidthRequest="120" CornerRadius="60" BorderColor="#DAA520" Padding="1" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="1 MTCH" FontSize="Small" TextColor="#DAA520"/>
+                    <Button BackgroundColor="#DAA520" WidthRequest="50" HeightRequest="30" Text=".99" TextColor="Black" Command="{Binding OneMtchCommand}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="1" HasShadow="False" HeightRequest="120" WidthRequest="120" CornerRadius="60" BorderColor="#DAA520" Padding="1" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="5 MTCH" FontSize="Small" TextColor="#DAA520"/>
+                    <Button BackgroundColor="#DAA520" WidthRequest="50" HeightRequest="30" Text="3.99" TextColor="Black" Command="{Binding FiveMtchCommand}"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="2" HasShadow="False" HeightRequest="120" WidthRequest="120" CornerRadius="60" BorderColor="#DAA520" Padding="1" BackgroundColor="Black" HorizontalOptions="Center" VerticalOptions="Center"> 
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="10 MTCH" FontSize="Small" TextColor="#DAA520"/>
+                    <Button BackgroundColor="#DAA520" WidthRequest="50" HeightRequest="30" Text="6.99" TextColor="Black" Command="{Binding TenMtchCommand}"/>
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+                Shell.NavBarHasShadow="false" Shell.NavBarIsVisible="false"
+             mc:Ignorable="d"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.ScoreCardPage">
+    <ContentPage.Content>
+        <Grid>
+        <Grid Grid.Row="0" BackgroundColor="#F3F5F9" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding IsScoreCardView}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <imagecircle:CircleImage    Grid.Row="0" Margin="0,0,0,0"                                          
+                                                BorderColor="{StaticResource GoldenColor}"
+                                                BorderThickness="4"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="Pool.jpg"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="50"
+                                                WidthRequest="50" 
+                                                TranslationY="0"  />
+                    <Label Margin="0,0,0,0" TextColor="{StaticResource GoldenColor}" FontSize="40" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Score " FontSize="40" FontAttributes="Bold"/>
+                                    <Span Text="Card" FontAttributes="Bold"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="'Please confirm your scores...'" TextColor="{StaticResource GoldenColor}" FontSize="15" HorizontalTextAlignment="Center" Margin="0,-10,0,0"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="2" Margin="0,-50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                   
+                <BoxView Grid.Column="1" Grid.RowSpan="4" BackgroundColor="#455399" WidthRequest="5" HorizontalOptions="Start" 
+                                                 VerticalOptions="Fill"/>
+
+                <StackLayout  Margin="0,0" Grid.Row="1" Grid.Column="0">
+                <imagecircle:CircleImage    Margin="0,0,0,0"                                          
+                                                BorderColor="{StaticResource GoldenColor}"
+                                                BorderThickness="1"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="{Binding PlayerOne.PlayerImage}"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="150"
+                                                WidthRequest="150" 
+                                                TranslationY="0"  />
+                    <Label Text="{Binding PlayerOne.name}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <telerikInput:RadShapeRating IsReadOnly="True" ItemsSpacing="2" 
+                                                   HorizontalOptions="Center"              
+                                                 HeightRequest="20" Value="{Binding PlayerOne.rating}" />
+                </StackLayout>
+
+                <StackLayout Margin="0,0" Grid.Row="1" Grid.Column="2" >
+                                 <imagecircle:CircleImage  Margin="0,0,0,0"                                          
+                                                BorderColor="{StaticResource GoldenColor}"
+                                                BorderThickness="1"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="{Binding PlayerTwo.PlayerImage}"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="150"
+                                                WidthRequest="150" 
+                                                TranslationY="0"  />
+                    <Label Text="{Binding PlayerTwo.name}" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <telerikInput:RadShapeRating IsReadOnly="True" ItemsSpacing="2" 
+                                                   HorizontalOptions="Center"              
+                                                 HeightRequest="20" 
+                                                                  Value="{Binding PlayerTwo.rating}" />
+                </StackLayout>
+ 
+
+                <Button  Grid.Row="2" Grid.Column="0" CornerRadius="25" BackgroundColor="Black" Text="Frame Winner" Padding="10,0" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="End"  Command="{Binding PlayerOneFrameCommand}" IsEnabled="{Binding PlayersFrameButtonEnable}"/>
+                <Button  Grid.Row="2" Grid.Column="2" CornerRadius="25" BackgroundColor="Black" Text="Frame Winner" Padding="10,0" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="End"  Command="{Binding PlayerTwoFrameCommand}" IsEnabled="{Binding PlayersFrameButtonEnable}"/>
+
+                <Button  Grid.Row="2" Grid.ColumnSpan="3" CornerRadius="25" BackgroundColor="Black" Text="Undo" Padding="10,0" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="End" Command="{Binding UndoCommand}"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <pv:PancakeView Grid.Column="1"  Shadow="{pv:ShadowMarkup Color=#FF0000, Offset='10,10'}" CornerRadius="10" WidthRequest="80" HeightRequest="80" 
+                            Margin="0,-20,0,0" BackgroundColor="White" HorizontalOptions="Center">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding PlayerOneFrame}" TextColor="#455399" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Frames" TextColor="#455399" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                </pv:PancakeView>
+                <pv:PancakeView Grid.Column="3" Grid.RowSpan="2"  Shadow="{pv:ShadowMarkup Color=#FF0000, Offset='10,10'}" CornerRadius="10" WidthRequest="120" HeightRequest="80" 
+                            Margin="0,-20,0,0" BackgroundColor="{StaticResource GoldenColor}" HorizontalOptions="Center">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding CompletedFrame}" TextColor="White" FontSize="24" HorizontalOptions="Center"/>
+                        <Label Text="Frames" TextColor="White" FontSize="12" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                        <BoxView WidthRequest="40" BackgroundColor="White" HeightRequest="1"/>
+                        <Label Text="Frame" TextColor="White" FontSize="12" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                        <Label Text="{Binding MaxFrame}" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                </pv:PancakeView>
+                <pv:PancakeView Grid.Column="5"  Shadow="{pv:ShadowMarkup Color=#FF0000, Offset='10,10'}" CornerRadius="10" WidthRequest="80" HeightRequest="80" 
+                            Margin="0,-20,0,0" BackgroundColor="White" HorizontalOptions="Center">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding PlayerTwoFrame}" TextColor="#455399" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Frames" TextColor="#455399" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                </pv:PancakeView>
+
+            </Grid>
+
+        </Grid>
+
+            <Grid Grid.Row="0" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoDataView}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="nodata.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+                <Label Grid.Row="1" Text="Score Card Empty" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="2" Text="You need to start match" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

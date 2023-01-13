@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.EventsPage"
+             Title="Events"
+             xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.ViewModels"  
+             xmlns:model="clr-namespace:Bird.Client.Mtchmkr.Portable.Models"  
+            xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+
+    <ListView x:Name="MyListView"
+            ItemsSource="{Binding Events}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+    <!--Built in Cells-->
+    <ListView.ItemTemplate>
+        <DataTemplate>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <imagecircle:CircleImage Grid.Row="0" Grid.Column="0"
+                        BorderColor="White"
+                        BorderThickness="6"  
+                        FillColor="White"
+                        Visual="Default"
+                        HeightRequest="100"
+                        Source="{Binding Player1Image}"
+                        VerticalOptions="End"  
+                        Aspect="AspectFit"
+                        WidthRequest="100" TranslationY="50"  />
+                    <imagecircle:CircleImage Grid.Row="0" Grid.Column="1"
+                        BorderColor="White"
+                        BorderThickness="6"  
+                        FillColor="White"
+                        Visual="Default"
+                        HeightRequest="100"
+                        Source="{Binding Player2Image}"
+                        VerticalOptions="End"  
+                        Aspect="AspectFit"
+                        WidthRequest="100" TranslationY="50"  />
+                    <!--  <TextCell Text="{Binding .}" /> -->
+                </Grid>
+            </DataTemplate>
+    </ListView.ItemTemplate>
+    
+    <!--Custom View Cells-->
+    <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+  </ListView>
+</ContentPage>

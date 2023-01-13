@@ -1,0 +1,458 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Views\SearchPageOld.xaml.cs" />
+    <Compile Remove="Views\StartPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\SearchPageOld.xaml" />
+    <EmbeddedResource Remove="Views\StartPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Telerik.Zip" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.Pdf" />
+    <None Remove="Telerik.Documents.Flow.FormatProviders.Doc" />
+    <None Remove="Telerik.Documents.Flow" />
+    <None Remove="Telerik.XamarinForms.DataControls" />
+    <None Remove="Telerik.Documents.Core" />
+    <None Remove="Telerik.XamarinForms.PdfViewer" />
+    <None Remove="Telerik.XamarinForms.Input" />
+    <None Remove="Telerik.XamarinForms.SkiaSharp" />
+    <None Remove="Telerik.XamarinForms.Map" />
+    <None Remove="Telerik.Documents.Fixed" />
+    <None Remove="Telerik.XamarinForms.Primitives" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.Xls" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml" />
+    <None Remove="Telerik.XamarinForms.Common" />
+    <None Remove="Telerik.Documents.CMapUtils" />
+    <None Remove="Telerik.Documents.SpreadsheetStreaming" />
+    <None Remove="Telerik.XamarinForms.RichTextEditor" />
+    <None Remove="Telerik.XamarinForms.DataGrid" />
+    <None Remove="Telerik.XamarinForms.ConversationalUI" />
+    <None Remove="Telerik.XamarinForms.ImageEditor" />
+    <None Remove="Telerik.Documents.Flow.FormatProviders.Pdf" />
+    <None Remove="Telerik.XamarinForms.DataVisualization" />
+    <None Remove="Telerik.Documents.Spreadsheet" />
+    <None Remove="Telerik.XamarinForms.Barcode" />
+    <None Remove="Telerik.XamarinForms.Chart" />
+    <None Remove="Images\xamarin_logo.png" />
+    <None Remove="Images\Winner.png" />
+    <None Remove="Images\LennyHenry.jpg" />
+    <None Remove="Images\Email.png" />
+    <None Remove="Images\Check.png" />
+    <None Remove="Images\Venue.png" />
+    <None Remove="Images\icon.png" />
+    <None Remove="Images\ShowPassword.png" />
+    <None Remove="Images\Dashboard.png" />
+    <None Remove="Images\Login.png" />
+    <None Remove="Images\sms.png" />
+    <None Remove="Images\RequestSettings.png" />
+    <None Remove="Images\CurvedMask.png" />
+    <None Remove="Images\icon_about.png" />
+    <None Remove="Images\Calender.png" />
+    <None Remove="Images\SearchSettings.png" />
+    <None Remove="Images\AB.jpg" />
+    <None Remove="Images\JB.jpg" />
+    <None Remove="Images\Games.png" />
+    <None Remove="Images\Register.png" />
+    <None Remove="Images\Players.png" />
+    <None Remove="Images\Cancel.png" />
+    <None Remove="Images\ShowCase.png" />
+    <None Remove="Images\BarBilliards.jpg" />
+    <None Remove="Images\ProfilePic.png" />
+    <None Remove="Images\Pool.jpg" />
+    <None Remove="Images\Tucker.jpg" />
+    <None Remove="Images\Events.png" />
+    <None Remove="Images\Tools.png" />
+    <None Remove="Images\HeartWhole.png" />
+    <None Remove="Images\Search.png" />
+    <None Remove="Images\Project.png" />
+    <None Remove="Images\Request.png" />
+    <None Remove="Images\PaperWork.png" />
+    <None Remove="Images\Score.png" />
+    <None Remove="Images\Snooker.jpg" />
+    <None Remove="Images\HeaderBackground.png" />
+    <None Remove="Images\Profile.png" />
+    <None Remove="Images\GameType.png" />
+    <None Remove="Images\Balls.jpeg" />
+    <None Remove="Images\Pool2.jpg" />
+    <None Remove="Images\HeartOutline.png" />
+    <None Remove="Images\EightBall.png" />
+    <None Remove="Images\Lenny.jpg" />
+    <None Remove="Images\icon_feed.png" />
+    <None Remove="Images\Snooker2.jpg" />
+    <None Remove="Images\DownChevron.png" />
+    <None Remove="Images\HidePassword.png" />
+    <None Remove="Images\More.png" />
+    <None Remove="Images\Admin.png" />
+    <None Remove="Images\Preferences.png" />
+    <None Remove="Images\Setting.png" />
+    <None Remove="Images\TermsAndConditions.png" />
+    <None Remove="Images\Forgot.png" />
+    <None Remove="Images\PadlockOpen.png" />
+    <None Remove="Images\Pending.png" />
+    <None Remove="Images\Padlock.png" />
+    <None Remove="Images\UnHappy.png" />
+    <None Remove="Interfaces\" />
+    <None Remove="CustomControls\" />
+    <None Remove="Xam.Plugin.Media" />
+    <None Remove="Plugin.GoogleClient" />
+    <None Remove="Braintree" />
+    <None Remove="XamarinFastEntry.Behaviors" />
+    <None Remove="Plugin.FirebasePushNotification" />
+    <None Remove="Plugin.PushNotification" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.5" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="Sharpnado.Shadows" Version="1.2.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xam.Shell.Badge" Version="1.0.20" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Plugin.GoogleClient" Version="2.1.12" />
+    <PackageReference Include="Braintree" Version="5.14.0" />
+    <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
+    <PackageReference Include="Plugin.PushNotification" Version="3.6.23" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AdminShell.xaml.cs">
+      <DependentUpon>AdminShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\BookingsPage.xaml.cs">
+      <DependentUpon>BookingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DashBoardPage.xaml.cs">
+      <DependentUpon>DashBoardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PreferencesPage.xaml.cs">
+      <DependentUpon>PreferencesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RequestSettingsPage.xaml.cs">
+      <DependentUpon>RequestSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SearchSettingsPage.xaml.cs">
+      <DependentUpon>SearchSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\VenuesPage.xaml.cs">
+      <DependentUpon>VenuesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\xamarin_logo.png" />
+    <EmbeddedResource Include="Images\Winner.png" />
+    <EmbeddedResource Include="Images\LennyHenry.jpg" />
+    <EmbeddedResource Include="Images\Email.png" />
+    <EmbeddedResource Include="Images\Check.png" />
+    <EmbeddedResource Include="Images\Venue.png" />
+    <EmbeddedResource Include="Images\icon.png" />
+    <EmbeddedResource Include="Images\ShowPassword.png" />
+    <EmbeddedResource Include="Images\Dashboard.png" />
+    <EmbeddedResource Include="Images\Login.png" />
+    <EmbeddedResource Include="Images\sms.png" />
+    <EmbeddedResource Include="Images\RequestSettings.png" />
+    <EmbeddedResource Include="Images\CurvedMask.png" />
+    <EmbeddedResource Include="Images\icon_about.png" />
+    <EmbeddedResource Include="Images\Calender.png" />
+    <EmbeddedResource Include="Images\SearchSettings.png" />
+    <EmbeddedResource Include="Images\AB.jpg" />
+    <EmbeddedResource Include="Images\JB.jpg" />
+    <EmbeddedResource Include="Images\Games.png" />
+    <EmbeddedResource Include="Images\Register.png" />
+    <EmbeddedResource Include="Images\Players.png" />
+    <EmbeddedResource Include="Images\Cancel.png" />
+    <EmbeddedResource Include="Images\ShowCase.png" />
+    <EmbeddedResource Include="Images\BarBilliards.jpg" />
+    <EmbeddedResource Include="Images\ProfilePic.png" />
+    <EmbeddedResource Include="Images\Pool.jpg" />
+    <EmbeddedResource Include="Images\Tucker.jpg" />
+    <EmbeddedResource Include="Images\Events.png" />
+    <EmbeddedResource Include="Images\Tools.png" />
+    <EmbeddedResource Include="Images\HeartWhole.png" />
+    <EmbeddedResource Include="Images\Search.png" />
+    <EmbeddedResource Include="Images\Project.png" />
+    <EmbeddedResource Include="Images\Request.png" />
+    <EmbeddedResource Include="Images\PaperWork.png" />
+    <EmbeddedResource Include="Images\Score.png" />
+    <EmbeddedResource Include="Images\Snooker.jpg" />
+    <EmbeddedResource Include="Images\HeaderBackground.png" />
+    <EmbeddedResource Include="Images\Profile.png" />
+    <EmbeddedResource Include="Images\GameType.png" />
+    <EmbeddedResource Include="Images\Balls.jpeg" />
+    <EmbeddedResource Include="Images\Pool2.jpg" />
+    <EmbeddedResource Include="Images\HeartOutline.png" />
+    <EmbeddedResource Include="Images\EightBall.png" />
+    <EmbeddedResource Include="Images\Lenny.jpg" />
+    <EmbeddedResource Include="Images\icon_feed.png" />
+    <EmbeddedResource Include="Images\Snooker2.jpg" />
+    <EmbeddedResource Include="Images\DownChevron.png" />
+    <EmbeddedResource Include="Images\HidePassword.png" />
+    <EmbeddedResource Include="Images\More.png" />
+    <EmbeddedResource Include="Images\Admin.png" />
+    <EmbeddedResource Include="Images\Preferences.png" />
+    <EmbeddedResource Include="Images\Setting.png" />
+    <EmbeddedResource Include="Images\TermsAndConditions.png" />
+    <EmbeddedResource Include="Images\Forgot.png" />
+    <EmbeddedResource Include="Images\PadlockOpen.png" />
+    <EmbeddedResource Include="Images\Pending.png" />
+    <EmbeddedResource Include="Images\Padlock.png" />
+    <EmbeddedResource Include="Images\UnHappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\BookNowPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CreateBookingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DashBoardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GameTypeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SearchResultsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ShowCasePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BookingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CurrentMatchesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ForgotPasswordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LoginShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Header.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HistoricResults.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PreferencesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PreferencesDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PreferencesFlyout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PrivacyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RegistrationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RequestSettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SearchSettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ToolsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ValidationCode.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VenuesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Core">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.CMapUtils">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.CMapUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Barcode">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Core">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.CMapUtils">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.CMapUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Barcode">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="CustomControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bird.Client.Mtchmkr.Business\Bird.Client.Mtchmkr.Business.csproj" />
+  </ItemGroup>
+</Project>

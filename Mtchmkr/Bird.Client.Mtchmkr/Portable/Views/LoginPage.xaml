@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.LoginPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"     
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.CustomControls"
+             Shell.FlyoutBehavior="Disabled">
+    <Shell.NavBarIsVisible>False</Shell.NavBarIsVisible>
+    <ContentPage.Content>
+        <Grid  RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <v:Header FirstName="Log" LastName="In" Caption="Please login" />
+
+
+            <Grid Padding="10,10,10,0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text="Username" TextColor="Black"/>
+                    <local:ExtendedEntry x:Name="usernameEntry" Text="{Binding Username}"  HeightRequest="40" HasBorder="True" Placeholder="Username" BorderColor="{d:StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" Keyboard="Email"  />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Label Text="Password" TextColor="Black" Margin="0,10,0,0"/>
+                    <local:ExtendedEntry x:Name="passwordEntry" Text="{Binding Password}" IsPassword="true" Placeholder="Password" HeightRequest="40" HasBorder="True" BorderColor="{d:StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Button VerticalOptions="Center" Text="Login" Style="{StaticResource FollowButton}" Command="{Binding LoginCommand}" Margin="0,20,0,10"/>
+                    <Label x:Name="messageLabel" IsVisible="{Binding Message}" Text="The user name or password is incorrect or the user does not exist" />
+                </StackLayout>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--<Label  Text="Forgot Password" TextDecorations="Underline" TextColor="{d:StaticResource GoldenColor}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotCommand}"  />
+                        </Label.GestureRecognizers>
+                    </Label>-->
+                    <Label Grid.Column="1" Text="Forgot Password" TextDecorations="Underline" TextColor="{d:StaticResource GoldenColor}" HorizontalOptions="EndAndExpand" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotCommand}"  />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid Grid.Row="4" Margin="0,30,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <BoxView HeightRequest="2" BackgroundColor="Black" VerticalOptions="Center" HorizontalOptions="Fill"></BoxView>
+                    <Frame BackgroundColor="{StaticResource GoldenColor}" HeightRequest="40"  CornerRadius="20" HasShadow="False" HorizontalOptions="Center" VerticalOptions="Center" Padding="10,2">
+                        <Label Text="Or continue with" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+
+                        </Label>
+                    </Frame>
+
+                    <Frame x:Name="mainLayout" Grid.Row="1" BackgroundColor="Red" HeightRequest="40" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Padding="2" Margin="0,30" HasShadow="True">
+                        <StackLayout HorizontalOptions="Center" Spacing="20" Orientation="Horizontal" Padding="10,0">
+                            <Image Source="icon_google.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
+                            <Label Text="Sign In with Google" TextColor="White" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=BindingContext.OnGoogleLoginCommand, Source={x:Reference mainLayout}}"
+                                                  CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <!--<StackLayout Margin="0,30" Padding="20"
+                         VerticalOptions="Center" HorizontalOptions="Center"
+                         x:Name="mainLayout"
+                         BindableLayout.ItemsSource="{Binding AuthenticationNetworks}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                 <Button Text="{Binding Name, StringFormat='Login with {0}'}"
+                                    ImageSource="{Binding Icon}"
+                                    Command="{Binding Path=BindingContext.OnLoginCommand, Source={x:Reference mainLayout}}"
+                                    CommandParameter="{Binding .}"     
+                                    HeightRequest="45"
+                                    TextColor="{Binding Foreground}"
+                                    BackgroundColor="{Binding Background}"
+                                    WidthRequest="280"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>-->
+
+                </Grid>
+            </Grid>
+            
+        </Grid>
+ 
+
+    </ContentPage.Content>
+</ContentPage>

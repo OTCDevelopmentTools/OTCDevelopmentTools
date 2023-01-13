@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.GameTypeView">
+  <ContentView.Content>
+        <StackLayout BackgroundColor="Pink" Grid.Row="2">
+            <Label Text="Game Type" FontAttributes="Bold" TextColor="Black"/>
+            <Grid BackgroundColor="Green" ColumnDefinitions="*,*" ColumnSpacing="20">
+                <RadioButton HorizontalOptions="Fill" GroupName="Type" ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="Friendly" IsChecked="{Binding IsFriendly}" />
+                <RadioButton HorizontalOptions="Fill" Grid.Column="1" GroupName="Type" ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="Cash" IsChecked="{Binding IsCash}" />
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.RequestSettingsPage"
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             Shell.NavBarIsVisible="False"
+             Title="Request Settings">
+    <ContentPage.Content>
+        
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!-- Header-->
+                <RowDefinition Height="160"></RowDefinition>
+                <!-- Main Content-->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--     <BoxView BackgroundColor="Red" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="1" ></BoxView> -->
+            
+            <v:Header FirstName="Request" LastName="Settings" Caption="Control the requests you recieve here..." />
+
+            <Grid Margin="5,0,10,0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label FontAttributes="Bold" Text="Recieve requests" TextColor="Black"/>
+                <Switch Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"/>
+            </Grid>
+            <xct:Expander Grid.Row="2" IsExpanded="True">
+                <xct:Expander.Header>
+                    <Grid Margin="5,0,10,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label FontAttributes="Bold" Text="Days I want to play " TextColor="Black"/>
+                    </Grid>
+                </xct:Expander.Header>
+                <Grid Margin="5,0,10,0" Grid.Row="2" VerticalOptions="StartAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Sunday" TextColor="Black"/>
+                    <Switch Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="1" Text="Monday" TextColor="Black"/>
+                    <Switch Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="2" Text="Tuesday" TextColor="Black"/>
+                    <Switch Grid.Row="2" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="3" Text="Wednesday" TextColor="Black"/>
+                    <Switch Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="4" Text="Thursday" TextColor="Black"/>
+                    <Switch Grid.Row="4" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="5" Text="Friday" TextColor="Black"/>
+                    <Switch Grid.Row="5" Grid.Column="1" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="6" Text="Saturday" TextColor="Black"/>
+                    <Switch Grid.Row="6" Grid.Column="1" HorizontalOptions="End"/>
+                </Grid>
+            </xct:Expander>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

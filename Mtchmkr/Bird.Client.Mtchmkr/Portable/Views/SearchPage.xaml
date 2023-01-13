@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.SearchPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             xmlns:checkBoxComamnds="clr-namespace:Telerik.XamarinForms.Primitives.CheckBox.Commands;assembly=Telerik.XamarinForms.Primitives"
+             Title="Search Players">
+    <Shell.NavBarIsVisible>False</Shell.NavBarIsVisible>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="displayLabelStyle">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="HeightRequest" Value="50"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!-- Header-->
+                <RowDefinition Height="120"></RowDefinition>
+                <!-- Main Content-->
+                <RowDefinition Height="Auto" />
+                <!--Button-->
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--     <BoxView BackgroundColor="Red" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="1" ></BoxView> -->
+            <views:Header FirstName="Search " LastName="Players" Caption="Please input the criteria your interested in..." />
+
+            <Grid Margin="10,0,10,0"  Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Label Text="Preferred Game " FontAttributes="Bold" TextColor="Black"></Label>
+                    <telerikInput:RadComboBox SelectionMode="Single" SelectedItem="{Binding SelectedGame, Mode=TwoWay}" DisplayMemberPath="name" ItemsSource="{Binding GamesItemSource}"  TextColor="Black">
+                    </telerikInput:RadComboBox>
+                </StackLayout>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Skills (Rating)" TextColor="Black" FontAttributes="Bold" Grid.ColumnSpan="2" Grid.Column="0"></Label>
+                    <Label Grid.Row="1" Text="Minimum" TextColor="Black"/>
+                    <telerikInput:RadShapeRating  HeightRequest="20" Grid.Column="1" Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Value="{Binding Minimum, Mode=TwoWay}"/>
+                    <Label Grid.Row="2" Text="Maximum" TextColor="Black"/>
+                    <telerikInput:RadShapeRating  HeightRequest="20" Grid.Column="1" Grid.Row="2" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Value="{Binding Maximum, Mode=TwoWay}"/>
+                </Grid>
+
+                <StackLayout Grid.Row="2">
+                    <Label Text="Race to" FontAttributes="Bold" TextColor="Black"/>
+                    <xct:RangeSlider
+                            x:Name="RangeSlider"
+                            MaximumValue="50"
+                            MinimumValue="0"
+                            StepValue="1"
+                            LowerValue="0"
+                            UpperValue="50"
+                            TrackColor="Black"
+                            ThumbColor="#DAA520" LowerThumbSize="0" />
+
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="3">
+                    <Label Text="Date" TextColor="Black" FontAttributes="Bold"></Label>
+
+                    <telerikInput:RadDateTimePicker x:Name="dateTimePicker" DisplayLabelStyle="{StaticResource displayLabelStyle}"
+                        MinimumHeightRequest="40" BorderColor="Silver" BorderThickness="1"  HeightRequest="50" MinimumDate="2022,01,01" >
+                        <telerikInput:RadDateTimePicker.SelectorSettings>
+                            <telerikInput:PickerPopupSelectorSettings AcceptCommand="{Binding Accept}" 
+                                                                          AcceptCommandParameter="{Binding Date, Source={x:Reference dateTimePicker}}"
+                                                                          CancelCommand="{Binding Cancel}"
+                                                                          CancelCommandParameter="{Binding Date, Source={x:Reference dateTimePicker}}"/>
+                            </telerikInput:RadDateTimePicker.SelectorSettings>
+                    </telerikInput:RadDateTimePicker>
+               
+
+                    <Label Text="Location " TextColor="Black" FontAttributes="Bold"></Label>
+                    <Grid ColumnDefinitions="*" RowDefinitions="40">
+                        <!--<telerikInput:RadComboBox SelectionMode="Single"
+                                                  TextColor="Black" BorderColor="{StaticResource Primary}"
+                                                  BorderThickness="1"
+                                                  ItemsSource="{Binding LocationItemsSource}"
+                                                  DisplayMemberPath="location"
+                                                  SelectedItem="{Binding SelectedLocation,Mode=TwoWay}"
+                                                  DropDownBorderThickness="1" DropDownBorderColor="Gray" >
+                        
+                        </telerikInput:RadComboBox>-->
+
+                        <telerikInput:RadAutoCompleteView x:Name="autoCompleteViewSuggest"
+                                  SuggestMode="Suggest"
+                                  ItemsSource="{Binding LocationItemsSource}"
+                                  TextSearchPath="location"
+                                  Watermark="Search..."
+                                  SuggestionItemSelected="autoCompleteViewSuggest_SuggestionItemSelected"                        
+                                  BorderThickness="1" BorderColor="Silver"
+                                  SuggestionViewHeight="150"/>
+                   
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+
+            <Button Text="Search"  Grid.Row="2" Command="{Binding SearchCommand}" Style="{StaticResource FollowButton}" Margin="20" />
+        </Grid>
+        <!-- </Grid>    -->
+    </ContentPage.Content>
+</ContentPage>

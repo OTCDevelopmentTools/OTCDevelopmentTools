@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
+             xmlns:local="clr-namespace:Bird.Client.Mtchmkr.Portable.CustomControls"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.RegistrationPage">
+    <Shell.NavBarIsVisible>False</Shell.NavBarIsVisible>
+    <ContentPage.Content>
+        <Grid  RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            
+
+            <v:Header FirstName="Regis" LastName="ter" Caption="Please register to use the system..." />
+
+
+            <Grid Padding="10,10,10,0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0">
+                    <Label Text="Name" TextColor="Black"/>
+                    <local:ExtendedEntry x:Name="NameEntry" HeightRequest="40" HasBorder="True" Text="{Binding Name}" Placeholder="Name" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Email" TextColor="Black"/>
+                        <Label Grid.Column="1" TextColor="{StaticResource Warning}" IsVisible="{Binding InvalidEmail}" Text="Please enter a valid email address" />
+                    </Grid>
+                    <local:ExtendedEntry x:Name="emailEntry" HeightRequest="40" HasBorder="True" Text="{Binding Email}" Placeholder="Email" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Username" TextColor="Black"/>
+                    </Grid>
+                    <local:ExtendedEntry x:Name="usernameEntry" HeightRequest="40" HasBorder="True" Text="{Binding Username}" Placeholder="Username" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Password" TextColor="Black"/>
+                        <Label Grid.Column="1" TextColor="{StaticResource Warning}" Text="{Binding PasswordText}" />
+                    </Grid>
+                    <local:ExtendedEntry x:Name="passwordEntry" Text="{Binding Password1}" Placeholder="Password" IsPassword="{Binding ShowPassword}" HeightRequest="40" HasBorder="True" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label TextColor="Black">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Confirm  " FontAttributes="Bold"/>
+                                        <Span Text="Password" FontAttributes="Italic"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                          <StackLayout HorizontalOptions="End" Orientation="Horizontal" Grid.Column="1">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TogglePassword}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label  HorizontalOptions="EndAndExpand" Text="{Binding ShowPasswordText}"/>
+                            <ImageButton  HorizontalOptions="EndAndExpand" WidthRequest="20" HeightRequest="20"  xct:IconTintColorEffect.TintColor="{StaticResource Primary}" BackgroundColor="Transparent" Source="{Binding ShowPasswordImage}"/>
+                        </StackLayout>
+                    </Grid>
+                    <local:ExtendedEntry x:Name="ConfirmPasswordEntry" Text="{Binding Password2}" Placeholder="Confirm Password" IsPassword="{Binding ShowPassword}" HeightRequest="40" HasBorder="True" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="5">
+                    <Label Text="Telephone" TextColor="Black"/>
+                    <local:ExtendedEntry x:Name="TelephoneEntry" HeightRequest="40" HasBorder="True" Text="{Binding Telephone}" Keyboard="Telephone" Placeholder="Telephone" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="6">
+                    <Button VerticalOptions="Center" Text="Register" Style="{StaticResource FollowButton}" Command="{Binding RegisterCommand}"/>
+                    <Label x:Name="messageLabel" IsVisible="{Binding IsValid}" Text="The user name or password is incorrect or the user does not exist" />
+                 </StackLayout>
+            </Grid>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

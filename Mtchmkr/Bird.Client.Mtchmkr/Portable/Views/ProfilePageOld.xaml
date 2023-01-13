@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+     
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.ProfilePageOld"
+             xmlns:vm="clr-namespace:Bird.Client.Mtchmkr.Portable.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="{StaticResource Primary}"
+                    HeightRequest="100"
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Margin="0,50,0,0">
+
+                    <imagecircle:CircleImage
+                        Aspect="AspectFill"
+                        BorderColor="White"
+                        BorderThickness="6"
+                        FillColor="White"
+                        HeightRequest="100"
+                        Source="{Binding Profile.Image}"
+                        VerticalOptions="Center"
+                        WidthRequest="100" />
+                </StackLayout>
+
+                <Label
+                    Grid.Row="1"
+                    Margin="10"
+                    FontSize="Micro"
+                    HorizontalOptions="Center"
+                    Text="{Binding Profile.Name}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="10"
+                    FontSize="Micro"
+                    HorizontalOptions="Center"
+                    Text="{Binding Profile.Name}" />
+            </Grid>
+            <Label
+                FontAttributes="None"
+                FontSize="Small"
+                HorizontalOptions="Start"
+                Text="Name" />
+            <Entry Text="{Binding Profile.Name}"></Entry>
+            <Button
+                
+                Margin="8"
+                HorizontalOptions="Center"
+                Style="{StaticResource ButtonOutline}"
+                WidthRequest="200" 
+                Text="Save" 
+                IsEnabled="{Binding Profile.HasChanged}"
+                Command="{Binding Save}"/>
+
+            <BoxView HeightRequest="6" Color="{StaticResource Primary}" />
+
+            <Label Margin="10" Text="{Binding Profile.Name}" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

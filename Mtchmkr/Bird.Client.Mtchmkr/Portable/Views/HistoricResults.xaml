@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.HistoricResults"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+  <ContentView.Content>
+        <Grid  WidthRequest="300" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            
+            <yummy:PancakeView  xct:ShadowEffect.Color="Black" xct:ShadowEffect.Radius="50" Margin="3"  
+                            WidthRequest="150"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout >
+                    <!--<Image VerticalOptions="Fill" xct:IconTintColorEffect.TintColor="Red" Source="UnHappy.png"/>-->
+                    <Label  HorizontalOptions="Center" Text="L" TextColor="Red"/>
+                    <Label  HorizontalOptions="Center" Text="30/30" TextColor="Black"/>
+                </StackLayout>
+            </yummy:PancakeView>
+           
+            <yummy:PancakeView Margin="3" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout>
+                    <!--<Image xct:IconTintColorEffect.TintColor="Green" Source="Winner.png"/>-->
+                    <Label  HorizontalOptions="Center" Text="W" TextColor="Green"/>
+                    <Label  HorizontalOptions="Center" Text="30/30" TextColor="Black"/>
+                </StackLayout>
+            </yummy:PancakeView>
+            <yummy:PancakeView Margin="3" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout  HorizontalOptions="Center">
+                    <!--<Image xct:IconTintColorEffect.TintColor="Green" Source="Winner.png"/>-->
+                    <Label  HorizontalOptions="Center" Text="W" TextColor="Green"/>
+                    <Label  HorizontalOptions="Center" Text="30/30" TextColor="Black"/>
+                </StackLayout>
+            </yummy:PancakeView>
+            <yummy:PancakeView Margin="3" Grid.Column="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout  HorizontalOptions="Center">
+                    <!--<Image xct:IconTintColorEffect.TintColor="Red" Source="UnHappy.png"/>-->
+                    <Label  HorizontalOptions="Center" Text="L" TextColor="Red"/>
+                    <Label  HorizontalOptions="Center" Text="30/30" TextColor="Black"/>
+                </StackLayout>
+            </yummy:PancakeView>
+            <yummy:PancakeView Margin="3" Grid.Column="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout  HorizontalOptions="Center">
+                    <!--<Image xct:IconTintColorEffect.TintColor="Green" Source="Winner.png"/>-->
+                    <Label  HorizontalOptions="Center" Text="W" TextColor="Green"/>
+                    <Label  HorizontalOptions="Center" Text="4/5" TextColor="Black"/>
+                </StackLayout>
+            </yummy:PancakeView>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

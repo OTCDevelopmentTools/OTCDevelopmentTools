@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A94D056-C4AD-415B-ABEA-5EFF3E99F43C}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Bird.Client.Mtchmkr.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Bird.Client.Mtchmkr.iOS</AssemblyName>
+    <ProvisioningType>manual</ProvisioningType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>LatestProfileMTCHMKR</CodesignProvision>
+    <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignProvision>distprovformtchmk</CodesignProvision>
+    <CodesignKey>iPhone Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>LatestProfileMTCHMKR</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>LatestProfileMTCHMKR</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>VS: com.example.birdclient Development</CodesignProvision>
+    <CodesignKey>Apple Development: Shakti Singh Dulawat (8S7MFADQ2R)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignProvision>VS: com.example.birdclient Development</CodesignProvision>
+    <CodesignKey>Apple Development: Shakti Singh Dulawat (8S7MFADQ2R)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DependencyServices\BaseUrl_iOS.cs" />
+    <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <Compile Include="DependencyServices\ProgressDialogService.cs" />
+    <Compile Include="iZettleShared\iZettleService.cs" />
+    <Compile Include="DependencyServices\iOSPayService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Barcode">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="SkiaSharp" Version="2.88.1" />
+    <PackageReference Include="SkiaSharp.Views" Version="2.88.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.1" />
+    <PackageReference Include="BTProgressHUD">
+      <Version>1.2.0.6</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.GoogleClient">
+      <Version>2.1.12</Version>
+    </PackageReference>
+    <PackageReference Include="Naxam.iZettle.iOS">
+      <Version>1.7.1</Version>
+    </PackageReference>
+    <PackageReference Include="Acr.Support">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Naxam.BraintreeCard.iOS">
+      <Version>4.37.0</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.PushNotification">
+      <Version>3.6.23</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Media\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Media\LaunchImages\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\120-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\180-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\58-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\87-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\80-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\216.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\1024-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\1024-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\512-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\256-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\32-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-1.appiconset\16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon-2.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portable\Bird.Client.Mtchmkr.Portable.csproj">
+      <Name>Bird.Client.Mtchmkr.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AB.jpg" />
+    <BundleResource Include="Resources\Admin.png" />
+    <BundleResource Include="Resources\Balls.jpeg" />
+    <BundleResource Include="Resources\BarBilliards.jpg" />
+    <BundleResource Include="Resources\Calender.png" />
+    <BundleResource Include="Resources\Cancel.png" />
+    <BundleResource Include="Resources\Check.png" />
+    <BundleResource Include="Resources\CurvedMask.png" />
+    <BundleResource Include="Resources\Dashboard.png" />
+    <BundleResource Include="Resources\DownChevron.png" />
+    <BundleResource Include="Resources\EightBall.png" />
+    <BundleResource Include="Resources\Email.png" />
+    <BundleResource Include="Resources\Events.png" />
+    <BundleResource Include="Resources\Forgot.png" />
+    <BundleResource Include="Resources\Games.png" />
+    <BundleResource Include="Resources\GameType.png" />
+    <BundleResource Include="Resources\HeaderBackground.png" />
+    <BundleResource Include="Resources\HeartOutline.png" />
+    <BundleResource Include="Resources\HeartWhole.png" />
+    <BundleResource Include="Resources\HidePassword.png" />
+    <BundleResource Include="Resources\icon_about.png" />
+    <BundleResource Include="Resources\icon_feed.png" />
+    <BundleResource Include="Resources\icon.png" />
+    <BundleResource Include="Resources\JB.jpg" />
+    <BundleResource Include="Resources\Lenny.jpg" />
+    <BundleResource Include="Resources\LennyHenry.jpg" />
+    <BundleResource Include="Resources\Login.png" />
+    <BundleResource Include="Resources\More.png" />
+    <BundleResource Include="Resources\Padlock.png" />
+    <BundleResource Include="Resources\PadlockOpen.png" />
+    <BundleResource Include="Resources\PaperWork.png" />
+    <BundleResource Include="Resources\Pending.png" />
+    <BundleResource Include="Resources\Players.png" />
+    <BundleResource Include="Resources\Pool.jpg" />
+    <BundleResource Include="Resources\Pool2.jpg" />
+    <BundleResource Include="Resources\Preferences.png" />
+    <BundleResource Include="Resources\Profile.png" />
+    <BundleResource Include="Resources\ProfilePic.png" />
+    <BundleResource Include="Resources\Project.png" />
+    <BundleResource Include="Resources\Register.png" />
+    <BundleResource Include="Resources\Request.png" />
+    <BundleResource Include="Resources\RequestSettings.png" />
+    <BundleResource Include="Resources\Score.png" />
+    <BundleResource Include="Resources\Search.png" />
+    <BundleResource Include="Resources\SearchSettings.png" />
+    <BundleResource Include="Resources\Setting.png" />
+    <BundleResource Include="Resources\ShowCase.png" />
+    <BundleResource Include="Resources\ShowPassword.png" />
+    <BundleResource Include="Resources\sms.png" />
+    <BundleResource Include="Resources\Snooker.jpg" />
+    <BundleResource Include="Resources\Snooker2.jpg" />
+    <BundleResource Include="Resources\TermsAndConditions.png" />
+    <BundleResource Include="Resources\Tools.png" />
+    <BundleResource Include="Resources\Tucker.jpg" />
+    <BundleResource Include="Resources\UnHappy.png" />
+    <BundleResource Include="Resources\Venue.png" />
+    <BundleResource Include="Resources\Winner.png" />
+    <BundleResource Include="Resources\xamarin_logo.png" />
+    <BundleResource Include="Resources\MmTerms.docx" />
+    <BundleResource Include="Resources\MmTermsNew.docx" />
+    <BundleResource Include="Resources\appstore.png" />
+    <BundleResource Include="Resources\billiardsnew.jpg" />
+    <BundleResource Include="Resources\NineBall.jpg" />
+    <BundleResource Include="Resources\PoolNew.jpg" />
+    <BundleResource Include="Resources\MmTermsNew.html" />
+    <BundleResource Include="Resources\icon_google.png" />
+    <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\nodata.png" />
+    <BundleResource Include="GoogleService-Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DependencyServices\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="iZettleShared\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

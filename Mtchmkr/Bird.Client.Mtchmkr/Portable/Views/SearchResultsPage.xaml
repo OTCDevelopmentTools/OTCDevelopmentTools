@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.SearchResultsPage"
+             Title="Search results"
+             xmlns:telerikDataControls="clr-namespace:Telerik.XamarinForms.DataControls;assembly=Telerik.XamarinForms.DataControls"
+xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;assembly=Telerik.XamarinForms.DataControls"
+
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views">
+    <ContentPage.Content>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        
+            <!--<ListView x:Name="MyListView" Grid.Row="0"
+                        ItemsSource="{Binding PlayersItemsSource}"
+                      SelectedItem="{Binding SelectedPlayer,Mode=TwoWay}"
+                      HasUnevenRows="true" SeparatorVisibility="None"
+                        CachingStrategy="RecycleElement">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <imagecircle:CircleImage Grid.Row="0" Grid.Column="0"
+                                    BorderColor="Red"
+                                    BorderThickness="2"  
+                                    Source="{Binding PlayerImage}"
+                                    Visual="Default"
+                                    HeightRequest="60"
+                                    VerticalOptions="Center"  
+                                    Aspect="AspectFit"
+                                    BackgroundColor="Red"
+                                    WidthRequest="60" Margin="5"/>
+
+                                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" Margin="10">
+                                    <Label Text="{Binding name}" HorizontalOptions="Start" />
+                                    <Label Text="{Binding gameName}" HorizontalOptions="Start" />
+                                    <Label Text="{Binding place}" HorizontalOptions="Start" />
+                                </StackLayout>
+                                
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="Silver" HeightRequest="0.5" VerticalOptions="End"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+    
+              </ListView>-->
+
+            <telerikDataControls:RadListView x:Name="listView"
+                                             SelectionMode="Multiple"
+                                             ItemsSource="{Binding PlayersItemsSource}"
+                                             SelectionChanged="listView_SelectionChanged">
+                <telerikDataControls:RadListView.ItemTemplate>
+                    <DataTemplate>
+                        <telerikListView:ListViewTemplateCell>
+                            <telerikListView:ListViewTemplateCell.View>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <imagecircle:CircleImage Grid.Row="0" Grid.Column="0"
+                                        BorderColor="Red"
+                                        BorderThickness="2"  
+                                        Source="{Binding PlayerImage}"
+                                        Visual="Default"
+                                        HeightRequest="60"
+                                        VerticalOptions="Center"  
+                                        Aspect="AspectFit"
+                                        BackgroundColor="Red"
+                                        WidthRequest="60" Margin="5"/>
+
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" Margin="10">
+                                        <Label Text="{Binding name}" HorizontalOptions="Start" />
+                                        <Label Text="{Binding gameName}" HorizontalOptions="Start" />
+                                        <Label Text="{Binding place}" HorizontalOptions="Start" />
+                                    </StackLayout>
+                                
+                                    <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="Silver" HeightRequest="0.5" VerticalOptions="End"/>
+                                </Grid>
+                            </telerikListView:ListViewTemplateCell.View>
+                        </telerikListView:ListViewTemplateCell>
+                    </DataTemplate>
+                </telerikDataControls:RadListView.ItemTemplate>
+                <telerikDataControls:RadListView.SelectedItemStyle>
+                    <telerikListView:ListViewItemStyle BackgroundColor="#88FFF5BA" 
+                                                       BorderColor="#88FFF5BA" />
+                </telerikDataControls:RadListView.SelectedItemStyle>
+            </telerikDataControls:RadListView>
+
+            <Button Text="Book Now"  Grid.Row="1" Command="{Binding BookCommand}" Style="{StaticResource FollowButton}" Margin="10" VerticalOptions="End" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

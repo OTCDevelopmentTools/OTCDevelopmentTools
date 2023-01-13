@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             mc:Ignorable="d"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:imagecircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+
+             x:Class="Bird.Client.Mtchmkr.Portable.Views.ScoreCardPageOld">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#F3F5F9" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid BackgroundColor="#455399" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <imagecircle:CircleImage    Grid.Row="0" Margin="0,0,0,0"                                          
+                                                BorderColor="#00C6AE"
+                                                BorderThickness="6"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="Pool.jpg"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="50"
+                                                WidthRequest="50" 
+                                                TranslationY="0"  />
+                    <Label Margin="0,0,0,0" TextColor="White" FontSize="40" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Score " FontSize="40" FontAttributes="Bold"/>
+                                    <Span Text="Card"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="'Please confirm your scores...'" TextColor="White" FontSize="15" HorizontalTextAlignment="Center" Margin="0,-10,0,0"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <BoxView Grid.Column="1" Grid.RowSpan="4" BackgroundColor="#455399" WidthRequest="5" HorizontalOptions="Start" 
+                                                 VerticalOptions="Fill"/>
+
+                    <imagecircle:CircleImage  Grid.Row="1"  Grid.Column="0" Margin="0,0,0,0"                                          
+                                                BorderColor="#00C6AE"
+                                                BorderThickness="10"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="AB.jpg"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="150"
+                                                WidthRequest="150" 
+                                                TranslationY="0"  />
+
+                <imagecircle:CircleImage   Grid.Row="1" Grid.Column="2" Margin="0,0,0,0"                                          
+                                                BorderColor="Red"
+                                                BorderThickness="10"  
+                                                FillColor="White"
+                                                Visual="Default"
+                                                Source="JB.jpg"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="Center"
+                                                Aspect="Fill"
+                                                HeightRequest="150"
+                                                WidthRequest="150" 
+                                                TranslationY="0"  />
+
+                <Button  Grid.Row="1" Grid.Column="0" CornerRadius="30" BackgroundColor="#00C6AE" Text="Frame Winner" HorizontalOptions="Center" VerticalOptions="End"  />
+                <Button  Grid.Row="1" Grid.Column="2" CornerRadius="30" BackgroundColor="#00C6AE" Text="Frame Winner" HorizontalOptions="Center" VerticalOptions="End"  />
+
+                <Button  Grid.Row="2" Grid.ColumnSpan="3" CornerRadius="30" BackgroundColor="#00C6AE" Text="Undo" HorizontalOptions="Center" VerticalOptions="End"  />
+            </Grid>
+
+            <pv:PancakeView Grid.Row="1"  Shadow="{pv:ShadowMarkup Color=#FF0000, Offset='10,10'}" CornerRadius="10" WidthRequest="200" HeightRequest="100" Margin="0,-20,0,0" 
+                        HorizontalOptions="Center">
+                <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Column="0" Grid.RowSpan="2" WidthRequest="100"   BackgroundColor="White" />
+                    <BoxView Grid.Column="1" Grid.RowSpan="2" WidthRequest="100" BackgroundColor="#00C6AE"/>
+                    <BoxView Grid.Column="2" Grid.RowSpan="2" WidthRequest="100" BackgroundColor="White"/>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="14" TextColor="#455399" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Frames" TextColor="#455399" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Start">
+                        <Label Text="Frame" TextColor="White" FontSize="16" HorizontalOptions="Center"/>
+                        <Label Text="28"  TextColor="White" FontSize="30" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                        <Label Text="Of" TextColor="White" FontSize="16" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                        <Label Text="45" TextColor="White" FontSize="30" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="23" TextColor="#455399" FontSize="36" HorizontalOptions="Center"/>
+                        <Label Text="Frames" TextColor="#455399" FontSize="12" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+                    </StackLayout>
+                    <BoxView Grid.Row="1" Grid.ColumnSpan="3" WidthRequest="73" HeightRequest="1" BackgroundColor="#F1F3F7" 
+                         HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <pv:PancakeView Grid.Row="1" HeightRequest="7" WidthRequest="7" 
+                                 CornerRadius="3.5" HorizontalOptions="Center" 
+                                VerticalOptions="Center" Margin="7">
+                        <pv:PancakeView.Border>
+                            <pv:Border Thickness="2" Color="#C9D6EF" />
+                        </pv:PancakeView.Border>
+                    </pv:PancakeView>
+                    <pv:PancakeView Grid.Row="1" Grid.Column="2" HeightRequest="7" WidthRequest="7" CornerRadius="3.5" HorizontalOptions="Center" 
+                                BackgroundColor="#C9D6EF" VerticalOptions="Center" Margin="7">
+                        <pv:PancakeView.Border>
+                            <pv:Border Thickness="2" Color="#C9D6EF" />
+                        </pv:PancakeView.Border>
+                    </pv:PancakeView>
+                </Grid>
+            </pv:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
