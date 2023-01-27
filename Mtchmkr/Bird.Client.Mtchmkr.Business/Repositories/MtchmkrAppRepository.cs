@@ -98,5 +98,10 @@ namespace Bird.Client.Mtchmkr.Business.Repositories
         {
             return await this.client.CreatePostRequest<bool>($"UserPaymentInfo", info);
         }
+
+        public async Task<bool> InsertFCMInfoAsync(FcmDeviceInfo info)
+        {
+            return await this.client.CreatePostRequest<bool>($"User/SaveUserDeviceInfo", info);
+        }
     }
 }

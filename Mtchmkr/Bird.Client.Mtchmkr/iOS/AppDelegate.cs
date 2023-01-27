@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
-using iZettle;
+using Plugin.FirebasePushNotification;
 using Plugin.GoogleClient;
-using Plugin.PushNotification;
 using UIKit;
 
 namespace Bird.Client.Mtchmkr.iOS
@@ -24,17 +23,25 @@ namespace Bird.Client.Mtchmkr.iOS
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
 
-        const string clientId = @"f0f40ba2-0904-4d79-b723-22e558a253e8";
-
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            iZettleSDK.Shared.StartWithAPIKey(clientId);
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
             GoogleClientManager.Initialize();
             LoadApplication(new Bird.Client.Mtchmkr.Portable.App());
 
-            PushNotificationManager.Initialize(options, true);
+            FirebasePushNotificationManager.Initialize(options, new NotificationUserCategory[]
+            {
+                new NotificationUserCategory("message",new List<NotificationUserAction> {
+                    new NotificationUserAction("Reply","Reply",NotificationActionType.Foreground)
+                }),
+                new NotificationUserCategory("request",new List<NotificationUserAction> {
+                    new NotificationUserAction("Accept","Accept"),
+                    new NotificationUserAction("Reject","Reject",NotificationActionType.Destructive)
+                })
+
+            });
+
 
             return base.FinishedLaunching(app, options);
         }
@@ -46,20 +53,29 @@ namespace Bird.Client.Mtchmkr.iOS
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            PushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
+            FirebasePushNotificationManager.DidRegisterRemoteNotifications(deviceToken);
+
         }
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
-            PushNotificationManager.RemoteNotificationRegistrationFailed(error);
-
+            FirebasePushNotificationManager.RemoteNotificationRegistrationFailed(error);
         }
         // To receive notifications in foregroung on iOS 9 and below.
         // To receive notifications in background in any iOS version
         public override void DidReceiveRemoteNotification(UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
         {
+            // If you are receiving a notification message while your app is in the background,
+            // this callback will not be fired 'till the user taps on the notification launching the application.
 
-            PushNotificationManager.DidReceiveMessage(userInfo);
+            // If you disable method swizzling, you'll need to call this method. 
+            // This lets FCM track message delivery and analytics, which is performed
+            // automatically with method swizzling enabled.
+            FirebasePushNotificationManager.DidReceiveMessage(userInfo);
+            // Do your magic to handle the notification data
+            System.Console.WriteLine(userInfo);
+
+            completionHandler(UIBackgroundFetchResult.NewData);
         }
     }
 }

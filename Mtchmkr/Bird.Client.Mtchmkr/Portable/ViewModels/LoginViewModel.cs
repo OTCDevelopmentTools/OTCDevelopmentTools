@@ -1,5 +1,6 @@
 ﻿using Bird.Client.Mtchmkr.Business.Common;
 using Bird.Client.Mtchmkr.Business.ServiceCenter.Request;
+using Bird.Client.Mtchmkr.Business.ServiceCenter.Response;
 using Bird.Client.Mtchmkr.Helpers;
 using Bird.Client.Mtchmkr.Portable.Interfaces;
 using Bird.Client.Mtchmkr.Portable.Models;
@@ -15,6 +16,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Bird.Client.Mtchmkr.Portable.ViewModels
@@ -146,6 +148,15 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 var userId = result.userId.ToString();
                 Xamarin.Essentials.Preferences.Set("UserId", userId);
                 Xamarin.Essentials.Preferences.Set("Username", Username);
+
+                FcmDeviceInfo requestFcmInfo = new FcmDeviceInfo();
+                requestFcmInfo.deviceId = DependencyService.Get<IBaseUrl>().GetIdentifier();
+                requestFcmInfo.deviceToken = Xamarin.Essentials.Preferences.Get("TokenDevice", string.Empty); ;
+                requestFcmInfo.deviceType = DeviceInfo.Platform.ToString();
+                requestFcmInfo.userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
+                requestFcmInfo.createdDate = DateTime.Now;
+
+                var res = await App.ServiceManager.InsertFCMInfoAsync(requestFcmInfo);
             }
             else
             {

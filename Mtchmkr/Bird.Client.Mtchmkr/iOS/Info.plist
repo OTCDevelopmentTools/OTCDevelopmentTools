@@ -77,7 +77,7 @@
 		<string>com.izettle.cardreader-one</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>13</string>
+	<string>14</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>MTCHMKR needs permission</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>

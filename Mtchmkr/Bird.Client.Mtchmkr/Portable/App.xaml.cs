@@ -4,7 +4,7 @@ using Bird.Client.Mtchmkr.Business.Repositories;
 using Bird.Client.Mtchmkr.Portable.Common;
 using Bird.Client.Mtchmkr.Portable.Models;
 using Bird.Client.Mtchmkr.Portable.Views;
-using Plugin.PushNotification;
+using Plugin.FirebasePushNotification;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -140,34 +140,41 @@ namespace Bird.Client.Mtchmkr.Portable
 
         protected override void OnStart()
         {
-            SetMessageText($"{"Rajendra Notify"} TOKEN REC: {CrossPushNotification.Current.Token}");
 
             // Handle when your app starts
-            CrossPushNotification.Current.OnTokenRefresh += (s, p) =>
+            CrossFirebasePushNotification.Current.Subscribe("general");
+            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
             {
-                Xamarin.Essentials.Preferences.Set("TokenDevice",p.Token);
                 System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
-                SetMessageText($"TOKEN REC: {p.Token}");
+                Xamarin.Essentials.Preferences.Set("TokenDevice", p.Token);
             };
+            System.Diagnostics.Debug.WriteLine($"TOKEN: {CrossFirebasePushNotification.Current.Token}");
 
-            CrossPushNotification.Current.OnNotificationReceived += (s, p) =>
+            CrossFirebasePushNotification.Current.OnNotificationReceived += (s, p) =>
             {
                 try
                 {
                     System.Diagnostics.Debug.WriteLine("Received");
                     if (p.Data.ContainsKey("body"))
                     {
-                        SetMessageText($"{p.Data["body"]}");
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                           // mPage.Message = $"{p.Data["body"]}";
+                        });
+
                     }
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
+
                 }
+
             };
 
-            CrossPushNotification.Current.OnNotificationOpened += (s, p) =>
+            CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
             {
+                //System.Diagnostics.Debug.WriteLine(p.Identifier);
+
                 System.Diagnostics.Debug.WriteLine("Opened");
                 foreach (var data in p.Data)
                 {
@@ -176,7 +183,10 @@ namespace Bird.Client.Mtchmkr.Portable
 
                 if (!string.IsNullOrEmpty(p.Identifier))
                 {
-                    SetMessageText(p.Identifier);
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                       // mPage.Message = p.Identifier;
+                    });
                 }
                 else if (p.Data.ContainsKey("color"))
                 {
@@ -185,26 +195,42 @@ namespace Bird.Client.Mtchmkr.Portable
                         //mPage.Navigation.PushAsync(new ContentPage()
                         //{
                         //    BackgroundColor = Color.FromHex($"{p.Data["color"]}")
+
                         //});
                     });
+
                 }
                 else if (p.Data.ContainsKey("aps.alert.title"))
                 {
-                    SetMessageText($"{p.Data["aps.alert.title"]}");
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                       // mPage.Message = $"{p.Data["aps.alert.title"]}";
+                    });
+
                 }
             };
-            CrossPushNotification.Current.OnNotificationDeleted += (s, p) =>
+
+            CrossFirebasePushNotification.Current.OnNotificationAction += (s, p) =>
+            {
+                System.Diagnostics.Debug.WriteLine("Action");
+
+                if (!string.IsNullOrEmpty(p.Identifier))
+                {
+                    System.Diagnostics.Debug.WriteLine($"ActionId: {p.Identifier}");
+                    foreach (var data in p.Data)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"{data.Key} : {data.Value}");
+                    }
+
+                }
+
+            };
+
+            CrossFirebasePushNotification.Current.OnNotificationDeleted += (s, p) =>
             {
                 System.Diagnostics.Debug.WriteLine("Dismissed");
             };
-        }
 
-        private void SetMessageText(string text)
-        {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-               // mPage.Message = text;
-            });
         }
 
         protected override void OnSleep()

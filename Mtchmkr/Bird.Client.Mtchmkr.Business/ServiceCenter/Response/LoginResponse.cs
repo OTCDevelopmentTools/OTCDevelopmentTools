@@ -13,4 +13,13 @@ namespace Bird.Client.Mtchmkr.Business.ServiceCenter.Response
         public DateTime createdDate { get; set; }
     }
 
+    public class FcmDeviceInfo
+    {
+        public string deviceId { get; set; }
+        public Guid userId { get; set; }
+        public string deviceToken { get; set; }
+        public string deviceType { get; set; }
+        public DateTime createdDate { get; set; }
+    }
+
 }

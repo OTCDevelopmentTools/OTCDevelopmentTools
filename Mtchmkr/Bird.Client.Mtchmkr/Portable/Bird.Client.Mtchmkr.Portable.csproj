@@ -131,7 +131,7 @@
     <PackageReference Include="Plugin.GoogleClient" Version="2.1.12" />
     <PackageReference Include="Braintree" Version="5.14.0" />
     <PackageReference Include="XamarinFastEntry.Behaviors" Version="1.1.1" />
-    <PackageReference Include="Plugin.PushNotification" Version="3.6.23" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.4.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">

@@ -11,6 +11,9 @@ using Bird.Client.Mtchmkr.Portable.Interfaces;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using Bird.Client.Mtchmkr.Portable.Helpers;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Bird.Client.Mtchmkr.Portable.ViewModels
 {
@@ -108,7 +111,6 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 lstObj.Add(obj);
             }
             
-
             var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lstObj);
 
 
@@ -122,7 +124,6 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Player booking failed for match.", "Ok");
             }
-
             _progDialog.HideProgress();
             
         }
@@ -139,5 +140,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 return false;
             }
         }
+
+        
     }
 }

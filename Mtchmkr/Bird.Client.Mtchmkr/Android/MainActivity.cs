@@ -6,8 +6,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
-using Plugin.PushNotification;
 using Android.Content;
+using Plugin.FirebasePushNotification;
 
 namespace Bird.Client.Mtchmkr.Android
 {
@@ -28,15 +28,14 @@ namespace Bird.Client.Mtchmkr.Android
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            PushNotificationManager.ProcessIntent(this, Intent);
             LoadApplication(new Bird.Client.Mtchmkr.Portable.App());
-
+            FirebasePushNotificationManager.ProcessIntent(this, Intent);
         }
 
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-            PushNotificationManager.ProcessIntent(this, intent);
+            FirebasePushNotificationManager.ProcessIntent(this, intent);
         }
 
     }
