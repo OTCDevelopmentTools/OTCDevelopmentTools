@@ -13,6 +13,34 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="Xamarin.Forms" />
     <None Remove="Plugin.FirebasePushNotification" />
+    <None Remove="Telerik.Documents.CMapUtils" />
+    <None Remove="Telerik.Documents.Core" />
+    <None Remove="Telerik.Documents.DrawingML" />
+    <None Remove="Telerik.Documents.Fixed" />
+    <None Remove="Telerik.Documents.Fixed.FormatProviders.Image.Skia" />
+    <None Remove="Telerik.Documents.Flow" />
+    <None Remove="Telerik.Documents.Flow.FormatProviders.Doc" />
+    <None Remove="Telerik.Documents.Flow.FormatProviders.Pdf" />
+    <None Remove="Telerik.Documents.Spreadsheet" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.Pdf" />
+    <None Remove="Telerik.Documents.Spreadsheet.FormatProviders.Xls" />
+    <None Remove="Telerik.Documents.SpreadsheetStreaming" />
+    <None Remove="Telerik.XamarinForms.Barcode" />
+    <None Remove="Telerik.XamarinForms.Chart" />
+    <None Remove="Telerik.XamarinForms.Common" />
+    <None Remove="Telerik.XamarinForms.ConversationalUI" />
+    <None Remove="Telerik.XamarinForms.DataControls" />
+    <None Remove="Telerik.XamarinForms.DataGrid" />
+    <None Remove="Telerik.XamarinForms.DataVisualization" />
+    <None Remove="Telerik.XamarinForms.ImageEditor" />
+    <None Remove="Telerik.XamarinForms.Input" />
+    <None Remove="Telerik.XamarinForms.Map" />
+    <None Remove="Telerik.XamarinForms.PdfViewer" />
+    <None Remove="Telerik.XamarinForms.Primitives" />
+    <None Remove="Telerik.XamarinForms.RichTextEditor" />
+    <None Remove="Telerik.XamarinForms.SkiaSharp" />
+    <None Remove="Telerik.Zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />

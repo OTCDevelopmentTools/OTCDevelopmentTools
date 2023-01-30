@@ -27,9 +27,9 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>LatestProfileMTCHMKR</CodesignProvision>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -122,50 +122,50 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.PdfViewer">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
-    </Reference>
     <Reference Include="Telerik.Xamarin.iOS">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Map">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Map.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.RichTextEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ConversationalUI">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ImageEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.ImageEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.Xamarin.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Barcode">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Barcode.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Barcode.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\iOS\Telerik.XamarinForms.Chart.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\iOS\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

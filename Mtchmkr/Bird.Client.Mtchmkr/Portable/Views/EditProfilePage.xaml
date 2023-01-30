@@ -28,7 +28,7 @@
 
             <StackLayout Grid.Row="1" Orientation="Vertical" Margin="20,0,20,20">
                 <Label TextColor="Black" Text="Radius : "/>
-                <local:ExtendedEntry x:Name="radiusEntry" Text="{Binding Radius}"  HeightRequest="40" HasBorder="True" Placeholder="Radius" BorderColor="{d:StaticResource GoldenColor}" HorizontalOptions="FillAndExpand"/>
+                <local:ExtendedEntry x:Name="radiusEntry" Text="{Binding Radius}" Keyboard="Numeric"  HeightRequest="40" HasBorder="True" Placeholder="Radius" BorderColor="{d:StaticResource GoldenColor}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" Orientation="Vertical" Margin="20,0,20,20" IsVisible="false">

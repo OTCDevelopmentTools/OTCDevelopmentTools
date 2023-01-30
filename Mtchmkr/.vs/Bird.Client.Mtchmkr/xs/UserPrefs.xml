@@ -1,47 +1,46 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{6A94D056-C4AD-415B-ABEA-5EFF3E99F43C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs">
+﻿<Properties StartupConfiguration="{6A94D056-C4AD-415B-ABEA-5EFF3E99F43C}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="224" column="1" />
+      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="257" column="1" />
+      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="282" column="1" />
+      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" relfile="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" line="75" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AA1BB29B-DB36-4EBF-A0E2-4136B4AB0CE0" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AA1BB29B-DB36-4EBF-A0E2-4136B4AB0CE0" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs">
     <Files>
-      <File FileName="Bird.Client.Mtchmkr/Android/MainApplication.cs" Line="31" Column="16" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/App.xaml.cs" />
-      <File FileName="Bird.Client.Mtchmkr/iOS/Info.plist" />
-      <File FileName="Bird.Client.Mtchmkr/iOS/AppDelegate.cs" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs" Line="20" Column="53" />
+      <File FileName="Bird.Client.Mtchmkr/Android/MainApplication.cs" Line="31" Column="14" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/App.xaml.cs" Line="54" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/LoginShell.xaml.cs" Line="1" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/LoginViewModel.cs" Line="156" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr.Business/Repositories/MtchmkrAppRepository.cs" Line="44" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Helpers/ProfileHelper.cs" Line="11" Column="42" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Models/ProfileModel.cs" Line="6" Column="18" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/ProfileViewModel.cs" Line="32" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs" Line="20" Column="14" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/LoginShell.xaml" Line="1" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" Line="282" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Views/EditProfilePage.xaml" Line="37" Column="54" />
+      <File FileName="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" Line="77" Column="10" />
+      <File FileName="Bird.Client.Mtchmkr.Business/ServiceCenter/HttpBaseClient.cs" Line="112" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Bird.Client.Mtchmkr" expanded="True">
-            <Node name="Bird.Client.Mtchmkr.Portable" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="LoginPage.xaml" expanded="True">
-                  <Node name="LoginPage.xaml.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Bird.Client.Mtchmkr" expanded="True" />
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-  <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="109" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Views/ScoreCardPageOld.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/Views/ScoreCardPageOld.xaml.cs" line="16" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/RegistationViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/RegistationViewModel.cs" line="238" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" relfile="Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" line="88" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" relfile="Bird.Client.Mtchmkr/Portable/Models/BasePlayerModel.cs" line="102" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/Views/PlayersPage.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/Views/PlayersPage.xaml.cs" line="20" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/SearchViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/SearchViewModel.cs" line="470" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="150" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="157" column="1" />
-      <Breakpoint file="/Users/apple/Documents/GitHub/MtchmkrGit/Mtchmkr/Bird.Client.Mtchmkr/Portable/App.xaml.cs" relfile="Bird.Client.Mtchmkr/Portable/App.xaml.cs" line="203" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>Bird.Client.Mtchmkr/Android/Bird.Client.Mtchmkr.Android.csproj</String>
+  </DisabledProjects>
 </Properties>

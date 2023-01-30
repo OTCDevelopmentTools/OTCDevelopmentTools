@@ -61,69 +61,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Xamarin.Android.Input">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.PdfViewer">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.List">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.List.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Map">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Map.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.Gauges">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Gauges.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.Data">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.RichTextEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.Common">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.Primitives">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Xamarin.Android.Chart">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.Xamarin.Android.Chart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ConversationalUI">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ImageEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.ImageEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Barcode">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Barcode.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Android\Telerik.XamarinForms.Chart.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xam.Shell.Badge">

@@ -116,6 +116,8 @@
     <None Remove="XamarinFastEntry.Behaviors" />
     <None Remove="Plugin.FirebasePushNotification" />
     <None Remove="Plugin.PushNotification" />
+    <None Remove="Telerik.Documents.DrawingML" />
+    <None Remove="Telerik.Documents.Fixed.FormatProviders.Image.Skia" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.5" />
@@ -291,168 +293,96 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Telerik.Zip">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Core">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.PdfViewer">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Map">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Map.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Fixed">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Fixed.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.CMapUtils">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.CMapUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.RichTextEditor">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ConversationalUI">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ImageEditor">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ImageEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Barcode">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Barcode.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\..\..\..\Documents\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Zip">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Zip.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Core">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.PdfViewer">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.PdfViewer.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Map">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Map.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Fixed">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Fixed.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.CMapUtils">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.CMapUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.RichTextEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataGrid.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ConversationalUI">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.ImageEditor">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.ImageEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Documents.Spreadsheet">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.Documents.Spreadsheet.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Barcode">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Barcode.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\..\..\..\..\Progress\Telerik UI for Xamarin R2 2022 SP\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="CustomControls\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Bird.Client.Mtchmkr.Business\Bird.Client.Mtchmkr.Business.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Telerik.Documents.CMapUtils">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.CMapUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Core">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.DrawingML">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.DrawingML.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Fixed.FormatProviders.Image.Skia">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Fixed.FormatProviders.Image.Skia.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Doc">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Flow.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.Spreadsheet.FormatProviders.Xls">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.Spreadsheet.FormatProviders.Xls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Barcode">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Chart">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Common">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ConversationalUI">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataControls">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.DataControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataGrid">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.DataVisualization">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.ImageEditor">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Input">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Map">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.PdfViewer">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.Primitives">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.RichTextEditor">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.XamarinForms.SkiaSharp">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Zip">
+      <HintPath>..\..\..\..\..\Downloads\Telerik_UI_for_Xamarin_2023_1_117_1_Dev\Binaries\Portable\Telerik.Zip.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

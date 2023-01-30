@@ -17,7 +17,7 @@ namespace Bird.Client.Mtchmkr.Portable.Views
             InitializeComponent();
             this.BindingContext = new LoginViewModel(this);
 
-            App.Current.MainPage.DisplayAlert("Token", Xamarin.Essentials.Preferences.Get("TokenDevice",string.Empty),"Ok");
+           // App.Current.MainPage.DisplayAlert("Token", Xamarin.Essentials.Preferences.Get("TokenDevice",string.Empty),"Ok");
         }
     }
 }
