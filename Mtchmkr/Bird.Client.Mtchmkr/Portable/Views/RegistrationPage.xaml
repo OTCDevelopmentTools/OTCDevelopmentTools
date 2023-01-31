@@ -97,10 +97,16 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="5">
-                    <Label Text="Telephone" TextColor="Black"/>
-                    <local:ExtendedEntry x:Name="TelephoneEntry" HeightRequest="40" HasBorder="True" Text="{Binding Telephone}" Keyboard="Telephone" Placeholder="Telephone" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Telephone" TextColor="Black"/>
+                        <Label Grid.Column="1" TextColor="{StaticResource Warning}" Text="{Binding TelephoneText}" />
+                    </Grid>
+                    <local:ExtendedEntry MaxLength="12" x:Name="TelephoneEntry" HeightRequest="40" HasBorder="True" Text="{Binding Telephone}" Keyboard="Telephone" Placeholder="Telephone" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
-
                 <StackLayout Grid.Row="6">
                     <Button VerticalOptions="Center" Text="Register" Style="{StaticResource FollowButton}" Command="{Binding RegisterCommand}"/>
                     <Label x:Name="messageLabel" IsVisible="{Binding IsValid}" Text="The user name or password is incorrect or the user does not exist" />

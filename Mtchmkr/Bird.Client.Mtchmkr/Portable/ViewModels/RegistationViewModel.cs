@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace Bird.Client.Mtchmkr.Portable.ViewModels
 {
-    public class RegistationViewModel: BaseViewModel
+    public class RegistationViewModel : BaseViewModel
     {
         public string Message { get; private set; }
         public bool IsValid { get; private set; }
@@ -111,10 +111,10 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
         public bool ShowPassword
         {
             get { return !m_ShowPassword; }
-            set 
+            set
             {
                 if (m_ShowPassword == value) return;
-                m_ShowPassword = value; 
+                m_ShowPassword = value;
                 OnPropertyChanged(nameof(ShowPassword));
             }
         }
@@ -126,9 +126,22 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             {
                 if (m_ShowPasswordText == value) return;
                 m_ShowPasswordText = value;
-                OnPropertyChanged(nameof (ShowPasswordText));
+                OnPropertyChanged(nameof(ShowPasswordText));
             }
         }
+
+        private string m_TelephoneText;
+        public string TelephoneText
+        {
+            get => m_TelephoneText;
+            set
+            {
+                if (m_TelephoneText == value) return;
+                m_TelephoneText = value;
+                OnPropertyChanged(nameof(TelephoneText));
+            }
+        }
+
         private string m_ShowPasswordImage = Constants.ShowPasswordImage;
         public string ShowPasswordImage
         {
@@ -189,16 +202,16 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         bool Validate()
         {
-            ValidEmail =! ValidateEmail();
+            ValidEmail = !ValidateEmail();
             ValidPassword = ValidatePasswords();
-            return ValidEmail|| ValidPassword;
+            return ValidEmail && ValidPassword && ValidateTelephone();
         }
         bool ValidateEmail()
         {
             ValidEmail = EmailHelper.ValidateEmail(Email);
 
             return ValidEmail;
-           
+
         }
         bool ValidatePasswords()
         {
@@ -210,10 +223,22 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             if (!PasswordHelper.ValidatePassword(Password1, App.PasswordConstraint))
             {
                 PasswordText = App.PasswordConstraint.ToString();
+                return false;
             }
             return true;
         }
-  
+
+        bool ValidateTelephone()
+        {
+            if (Telephone?.Length > 12 || Telephone?.Length < 7)
+            {
+                TelephoneText = "Please enter a valid telephone number";
+                return false;
+            }
+            TelephoneText = String.Empty;
+            return true;
+        }
+
         async Task Register()
         {
             if (Validate())

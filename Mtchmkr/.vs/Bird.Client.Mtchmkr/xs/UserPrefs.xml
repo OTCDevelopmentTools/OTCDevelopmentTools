@@ -1,38 +1,33 @@
 ﻿<Properties StartupConfiguration="{6A94D056-C4AD-415B-ABEA-5EFF3E99F43C}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="224" column="1" />
       <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="257" column="1" />
       <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" relfile="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" line="282" column="1" />
-      <Breakpoint file="/Users/amitkumar/Documents/MatchMaker/Mtchmkr/Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" relfile="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" line="75" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Bird.Client.Mtchmkr.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AA1BB29B-DB36-4EBF-A0E2-4136B4AB0CE0" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AA1BB29B-DB36-4EBF-A0E2-4136B4AB0CE0" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_30" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Bird.Client.Mtchmkr/Android/DependencyServices/BaseUrl_Android.cs">
     <Files>
-      <File FileName="Bird.Client.Mtchmkr/Android/MainApplication.cs" Line="31" Column="14" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/App.xaml.cs" Line="54" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/LoginShell.xaml.cs" Line="1" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/LoginViewModel.cs" Line="156" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr.Business/Repositories/MtchmkrAppRepository.cs" Line="44" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Helpers/ProfileHelper.cs" Line="11" Column="42" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Models/ProfileModel.cs" Line="6" Column="18" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/ProfileViewModel.cs" Line="32" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Views/LoginPage.xaml.cs" Line="20" Column="14" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/LoginShell.xaml" Line="1" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/RegistationViewModel.cs" Line="77" Column="42" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/Views/RegistrationPage.xaml" Line="96" Column="96" />
       <File FileName="Bird.Client.Mtchmkr/Portable/ViewModels/EditProfilePageViewModel.cs" Line="282" Column="1" />
-      <File FileName="Bird.Client.Mtchmkr/Portable/Views/EditProfilePage.xaml" Line="37" Column="54" />
-      <File FileName="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" Line="77" Column="10" />
-      <File FileName="Bird.Client.Mtchmkr.Business/ServiceCenter/HttpBaseClient.cs" Line="112" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr.Business/ServiceCenter/Request/HttpRequestHelper.cs" Line="75" Column="1" />
+      <File FileName="Bird.Client.Mtchmkr/Portable/CustomControls/ExtendedEntry.cs" Line="6" Column="18" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/6.12.0/lib/mono/xbuild/Microsoft/NuGet/Microsoft.NuGet.targets" Line="186" Column="5" />
+      <File FileName="Bird.Client.Mtchmkr/Android/DependencyServices/BaseUrl_Android.cs" Line="19" Column="112" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Bird.Client.Mtchmkr" expanded="True" />
+          <Node name="Bird.Client.Mtchmkr" expanded="True">
+            <Node name="Bird.Client.Mtchmkr.Portable" expanded="True">
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
