@@ -86,10 +86,10 @@
                 <StackLayout Grid.Row="3">
                     <Label Text="Date" TextColor="Black" FontAttributes="Bold"></Label>
 
-                    <telerikInput:RadDateTimePicker x:Name="dateTimePicker" DisplayLabelStyle="{StaticResource displayLabelStyle}"
+                    <telerikInput:RadDateTimePicker DisplayStringFormat="yyyy/MM/dd hh:mm tt" x:Name="dateTimePicker" DisplayLabelStyle="{StaticResource displayLabelStyle}" Date="{Binding CurrentDelectedDate,Mode=TwoWay}"
                         MinimumHeightRequest="40" BorderColor="Silver" BorderThickness="1"  HeightRequest="50" MinimumDate="2022,01,01" >
                         <telerikInput:RadDateTimePicker.SelectorSettings>
-                            <telerikInput:PickerPopupSelectorSettings AcceptCommand="{Binding Accept}" 
+                            <telerikInput:PickerPopupSelectorSettings AcceptCommand="{Binding Accept}"
                                                                           AcceptCommandParameter="{Binding Date, Source={x:Reference dateTimePicker}}"
                                                                           CancelCommand="{Binding Cancel}"
                                                                           CancelCommandParameter="{Binding Date, Source={x:Reference dateTimePicker}}"/>

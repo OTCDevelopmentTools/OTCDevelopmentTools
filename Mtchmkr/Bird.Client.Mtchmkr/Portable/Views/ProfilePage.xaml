@@ -40,7 +40,7 @@
         <Image xct:IconTintColorEffect.TintColor="{StaticResource BackgroundColor}" Source="CurvedMask.png" Aspect="Fill" VerticalOptions="End" />
         
         <StackLayout Grid.Row="1" Padding="20,50,0,10" >
-            <telerikInput:RadShapeRating HorizontalOptions="Center" Value="{Binding Rating}" IsEnabled="False" />
+            <telerikInput:RadShapeRating HorizontalOptions="Center" Value="{Binding Rating,Mode=TwoWay}" IsEnabled="True" />
 
         </StackLayout>
 
@@ -54,7 +54,7 @@
 
             <StackLayout Orientation="Horizontal">
                 <Label TextColor="Black" Text="Email : "/>
-                <Label TextColor="Black" Text="{Binding Email}" FontAttributes="Bold"/>
+                <Label TextColor="Black" Text="{Binding Email,Mode=TwoWay}" FontAttributes="Bold"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">

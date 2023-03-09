@@ -29,7 +29,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignProvision>AppStoreProfile</CodesignProvision>
     <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -68,10 +68,10 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>Apple Distribution: MTCHMKR LTD (57H6TW6JBT)</CodesignKey>
+    <CodesignKey>iPhone Developer: Shakti Singh Dulawat (8S7MFADQ2R)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
-    <CodesignProvision>LatestProfileMTCHMKR</CodesignProvision>
+    <CodesignProvision>MTCHMKR_Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -113,6 +113,7 @@
     <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
     <Compile Include="DependencyServices\ProgressDialogService.cs" />
     <Compile Include="DependencyServices\iOSPayService.cs" />
+    <Compile Include="DependencyServices\InAppPurchase.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -190,6 +191,9 @@
     </PackageReference>
     <PackageReference Include="Plugin.FirebasePushNotification">
       <Version>3.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.InAppBilling">
+      <Version>6.7.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

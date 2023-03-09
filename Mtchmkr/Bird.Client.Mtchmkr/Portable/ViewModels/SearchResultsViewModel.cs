@@ -97,38 +97,37 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
             _progDialog.ShowProgress("Loading...");
 
-            List<PlayerBooking> lstObj = new List<PlayerBooking>();
+            PlayerBooking obj = new PlayerBooking();
+            obj.createdByUser = Guid.Parse(Preferences.Get("UserId", string.Empty)).ToString();
+            obj.locationId = LocationId.ToString();
+            obj.createdByUser = Preferences.Get("UserId", string.Empty);
+            obj.matchDate = Convert.ToDateTime(BookingDate);
+            obj.createdDate = DateTime.Now;
+            obj.matchRequestUsers = new List<string>();
+            obj.matchId = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
+
             foreach (var item in SelectedPlayers)
             {
-                PlayerBooking obj = new PlayerBooking();
-                obj.createdByUser = Guid.Parse(Preferences.Get("UserId", string.Empty));
-                obj.gameId = item.gameId;
-                obj.locationId = LocationId;
-                obj.requestedToUser = item.userId;
-                obj.date = Convert.ToDateTime(BookingDate);
-                obj.createdDate = DateTime.Now;
-                obj.isAgreed = false;
-                lstObj.Add(obj);
+                obj.gameId = item.gameId.ToString();
+                obj.matchRequestUsers.Add(item.userId.ToString());
             }
-            
-            var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lstObj);
 
-
-            var Result = await PlayerBookingMethod(lstObj);
+           
+            var Result = await PlayerBookingMethod(obj);
             if (Result)
             {
-                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Player booking successfully.", "Ok");
-                App.Current.MainPage.Navigation.PopToRootAsync(true);
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH request sent.", "Ok");
+                await App.Current.MainPage.Navigation.PopToRootAsync(true);
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Player booking failed for match.", "Ok");
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH request failed for MTCH.", "Ok");
             }
             _progDialog.HideProgress();
             
         }
 
-        public async Task<bool> PlayerBookingMethod(List<PlayerBooking> _request)
+        public async Task<bool> PlayerBookingMethod(PlayerBooking _request)
         {
             var result = await App.ServiceManager.PlayerBookingAsync(_request);
             if (result)

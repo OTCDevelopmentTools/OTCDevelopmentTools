@@ -39,6 +39,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 if (email == value) return;
                 email = value;
                 OnPropertyChanged(nameof(Email));
+                ValidEmail = ValidateEmail();
             }
         }
 
@@ -63,6 +64,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 if (password1 == value) return;
                 password1 = value;
                 OnPropertyChanged(nameof(Password1));
+                ValidatePasswords();
             }
         }
 
@@ -75,6 +77,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 if (password2 == value) return;
                 password2 = value;
                 OnPropertyChanged(nameof(Password2));
+                ValidatePasswords();
             }
         }
 
@@ -87,6 +90,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 if (telephone == value) return;
                 telephone = value;
                 OnPropertyChanged(nameof(Telephone));
+                ValidateTelephone();
             }
         }
 
@@ -96,12 +100,13 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             get => m_ValidEmail;
             set
             {
-                if (m_ValidEmail == value)
+                //if (m_ValidEmail == value)
                     m_ValidEmail = value;
                 OnPropertyChanged(nameof(ValidEmail));
                 OnPropertyChanged(nameof(InvalidEmail));
             }
         }
+
         public bool InvalidEmail
         {
             get => !ValidEmail;
@@ -181,6 +186,8 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
         public ICommand TogglePassword { get => new Command(async () => await Toggle()); }
         public ICommand RegisterCommand { get => new Command(async () => await Register()); }
 
+        private bool _applyValidation;
+
         async Task Toggle()
         {
             ShowPassword = ShowPassword;
@@ -202,19 +209,21 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         bool Validate()
         {
-            ValidEmail = !ValidateEmail();
+            ValidEmail = ValidateEmail();
             ValidPassword = ValidatePasswords();
             return ValidEmail && ValidPassword && ValidateTelephone();
         }
+
         bool ValidateEmail()
         {
+            if (!_applyValidation) return true;
             ValidEmail = EmailHelper.ValidateEmail(Email);
-
             return ValidEmail;
-
         }
+
         bool ValidatePasswords()
         {
+            if (!_applyValidation) return true;
             if (Password1 != Password2)
             {
                 PasswordText = "The passwords must be be equal";
@@ -230,6 +239,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         bool ValidateTelephone()
         {
+            if (!_applyValidation) return true;
             if (Telephone?.Length > 12 || Telephone?.Length < 7)
             {
                 TelephoneText = "Please enter a valid telephone number";
@@ -241,6 +251,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         async Task Register()
         {
+            _applyValidation = true;
             if (Validate())
             {
                 if (string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Username)

@@ -73,7 +73,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame x:Name="mainLayout" Grid.Row="1" BackgroundColor="Red" HeightRequest="40" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Padding="2" Margin="0,30" HasShadow="True">
+                    <!--<Frame x:Name="mainLayout" Grid.Row="1" BackgroundColor="Red" HeightRequest="40" CornerRadius="20" HorizontalOptions="Center" VerticalOptions="Center" Padding="2" Margin="0,30" HasShadow="True">
                         <StackLayout HorizontalOptions="Center" Spacing="20" Orientation="Horizontal" Padding="10,0">
                             <Image Source="icon_google.png" HeightRequest="25" WidthRequest="25" VerticalOptions="Center"/>
                             <Label Text="Sign In with Google" TextColor="White" VerticalOptions="Center"/>
@@ -82,7 +82,7 @@
                             <TapGestureRecognizer Command="{Binding Path=BindingContext.OnGoogleLoginCommand, Source={x:Reference mainLayout}}"
                                                   CommandParameter="{Binding .}" />
                         </Frame.GestureRecognizers>
-                    </Frame>
+                    </Frame>-->
 
                     <!--<StackLayout Margin="0,30" Padding="20"
                          VerticalOptions="Center" HorizontalOptions="Center"

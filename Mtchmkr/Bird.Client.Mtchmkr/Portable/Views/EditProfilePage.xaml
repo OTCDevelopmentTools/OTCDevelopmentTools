@@ -10,7 +10,7 @@
     x:Class="Bird.Client.Mtchmkr.Portable.Views.EditProfilePage">
     <ContentPage.Content>
         <ScrollView>
-        <Grid >
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"/>
@@ -40,7 +40,7 @@
 
             <StackLayout Grid.Row="3" Orientation="Vertical" Margin="20,0,20,20">
                 <Label TextColor="Black" Text="Preferred game : "/>
-                <telerikInput:RadComboBox SelectionMode="Single" BorderColor="{StaticResource Primary}" ItemsSource="{Binding GameSource}" SelectedItem="{Binding SelectedGame, Mode=TwoWay}" BorderThickness="1"  DropDownBorderThickness="1" DropDownBorderColor="Gray" TextColor="Black">
+                <telerikInput:RadComboBox DisplayMemberPath="name" SelectionMode="Single" BorderColor="{StaticResource Primary}" ItemsSource="{Binding GameSource}" SelectedItem="{Binding SelectedGame, Mode=TwoWay}" BorderThickness="1"  DropDownBorderThickness="1" DropDownBorderColor="Gray" TextColor="Black">
                     
                 </telerikInput:RadComboBox>
             </StackLayout>

@@ -1,4 +1,8 @@
-﻿using Bird.Client.Mtchmkr.Business.Common;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Bird.Client.Mtchmkr.Business.Common;
 using Bird.Client.Mtchmkr.Business.ServiceCenter.Request;
 using Bird.Client.Mtchmkr.Business.ServiceCenter.Response;
 using Bird.Client.Mtchmkr.Helpers;
@@ -9,19 +13,12 @@ using Newtonsoft.Json;
 using Plugin.Fingerprint;
 using Plugin.GoogleClient;
 using Plugin.GoogleClient.Shared;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Bird.Client.Mtchmkr.Portable.ViewModels
 {
-    
+
     public class LoginViewModel : BaseViewModel
     {
         private ContentPage m_Page;
@@ -143,11 +140,11 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             if (result != null)
             {
                 var profile = await Validate(Username, Password);
-                App.LoadUser(profile);
-                Message = !App.IsUserLoggedIn;
                 var userId = result.userId.ToString();
                 Xamarin.Essentials.Preferences.Set("UserId", userId);
                 Xamarin.Essentials.Preferences.Set("Username", Username);
+                App.LoadUser(profile);
+                Message = !App.IsUserLoggedIn;
 
                 FcmDeviceInfo requestFcmInfo = new FcmDeviceInfo();
                 requestFcmInfo.deviceId = DependencyService.Get<IBaseUrl>().GetIdentifier();
@@ -156,7 +153,10 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 requestFcmInfo.userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
                 requestFcmInfo.createdDate = DateTime.Now;
 
-                var res = await App.ServiceManager.InsertFCMInfoAsync(requestFcmInfo);
+                if (!string.IsNullOrEmpty(requestFcmInfo.deviceToken))
+                {
+                    var res = await App.ServiceManager.InsertFCMInfoAsync(requestFcmInfo);
+                }
             }
             else
             {

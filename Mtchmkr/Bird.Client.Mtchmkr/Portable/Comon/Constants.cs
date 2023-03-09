@@ -14,5 +14,9 @@ namespace Bird.Client.Mtchmkr.Portable.Comon
         public const string ShowPasswordText = "Show Passwords";
         public const string HidePasswordText = "Hide Passwords";
         public const string EqualValue = "Both passwords must match";
+
+        public const string ProductId1MTCH = "com.mtchmkr.1match.";
+        public const string ProductId10MTCH = "com.mtchmkr.10match";
+        public const string ProductId5MTCH = "com.mtchmkr.5match";
     }
 }

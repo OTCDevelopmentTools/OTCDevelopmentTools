@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Bird.Client.Mtchmkr.Business.Common;
 using Bird.Client.Mtchmkr.Business.ServiceCenter.Request;
@@ -70,8 +71,8 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
         }
 
-        private ObservableCollection<string> gameSource;
-        public ObservableCollection<string> GameSource
+        private ObservableCollection<GamesModel> gameSource;
+        public ObservableCollection<GamesModel> GameSource
         {
             get
             {
@@ -84,8 +85,8 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
         }
 
-        private string selectedGame;
-        public string SelectedGame
+        private GamesModel selectedGame;
+        public GamesModel SelectedGame
         {
             get
             {
@@ -224,7 +225,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             RegularAvailability = _profileData.regularAvailability;
             Place = _profileData.place;
             Radius = _profileData.radiusLocator;
-            SelectedGame = _profileData.preferredgames;
+          //  SelectedGame = _profileData.preferredgames;
             profileImageBase64Path = _profileData.imageData;
             profileImageExtension = _profileData.imageTitle;
             
@@ -247,8 +248,24 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             {
                 PlaysAgainst = _profileData.playsAgainst;
             }
+            GetGamesMethod();
+        }
 
-            GameSource = new ObservableCollection<string> { "Pool", "Snooker", "Bar Billiards" };
+        public async void GetGamesMethod()
+        {
+            _progDialog.ShowProgress("Loading...");
+            var result = await App.ServiceManager.GetGamesAsync();
+            if (result != null)
+            {
+                GameSource = new ObservableCollection<GamesModel>(result);
+                SelectedGame = GameSource.FirstOrDefault(x => x.name == _profileData.preferredgames);
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "No Data Found", "Ok");
+            }
+
+            _progDialog.HideProgress();
         }
 
         private async void UpdateCommandMethod()
@@ -271,12 +288,13 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 notificationMethod = NotificationMethod,
                 place = Place,
                 playsAgainst = PlaysAgainst,
-                preferredgames = SelectedGame,
+                preferredgames = SelectedGame.name,
                 radiusLocator = Radius,
                 rating = _profileData.rating,
                 regularAvailability = RegularAvailability,
                 telephone = _profileData.telephone,
-                userName = _profileData.userName
+                userName = _profileData.userName,
+                gameId=SelectedGame.gameId.ToString()
             };
 
             var result = await App.ServiceManager.UpdateUserProfileAsync(request);

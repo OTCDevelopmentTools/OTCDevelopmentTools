@@ -48,6 +48,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
         public ShowCaseViewModel(INavigation navigation):base(navigation)
         {
             _progDialog = DependencyService.Get<IProgressDialog>();
+            SendFCMToken();
         }
         protected override void LoadData()
         {
@@ -67,6 +68,8 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         public async void GetShowCaseData()
         {
+            if (_progDialog.IsShowing)
+                return;
             _progDialog.ShowProgress("Loading...");
             var userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
             var result = await App.ServiceManager.GetShowCaseDataAsync(userId);
@@ -82,6 +85,17 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
 
             _progDialog.HideProgress();
+        }
+
+        private async void SendFCMToken()
+        {
+            FcmDeviceInfo requestFcmInfo = new FcmDeviceInfo();
+            requestFcmInfo.deviceId = DependencyService.Get<IBaseUrl>().GetIdentifier();
+            requestFcmInfo.deviceToken = Xamarin.Essentials.Preferences.Get("TokenDevice", string.Empty); ;
+            requestFcmInfo.deviceType = DeviceInfo.Platform.ToString();
+            requestFcmInfo.userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
+            requestFcmInfo.createdDate = DateTime.Now;
+            await App.ServiceManager.InsertFCMInfoAsync(requestFcmInfo);
         }
     }
 }

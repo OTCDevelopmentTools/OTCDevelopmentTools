@@ -36,12 +36,12 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             var Result = await PlayerBookingConfirmMethod(Model.matchId, true);
             if (Result)
             {
-                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Match booking confirmed.", "Ok");
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH booking confirmed.", "Ok");
                 App.Current.MainPage.Navigation.PopToRootAsync(true);
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Match booking failed for match.", "Ok");
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH booking failed for MTCH.", "Ok");
             }
 
             await App.Current.MainPage.Navigation.PopAsync();

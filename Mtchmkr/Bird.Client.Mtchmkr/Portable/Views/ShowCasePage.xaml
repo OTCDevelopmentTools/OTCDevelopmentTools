@@ -6,8 +6,8 @@
              xmlns:CircleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:TelerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
              xmlns:v="clr-namespace:Bird.Client.Mtchmkr.Portable.Views"
-             xmlns:model="clr-namespace:Bird.Client.Mtchmkr.Portable.Models"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
              xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
              x:Name="ShowCase"
              Shell.NavBarIsVisible="False">
@@ -73,7 +73,14 @@
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>-->
-                                    <Label Text="{Binding date, StringFormat='{0:hh:mm tt}'}" Grid.Row="4" FontSize="24" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" />
+                                    <Grid HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="4" >
+                                        <BoxView BackgroundColor="Black" Opacity="0.7"/>
+                                        <Label Margin="5" VerticalOptions="Center"
+                                               Text="{Binding date, StringFormat='{0:yyyy/MM/dd  hh:mm tt}'}"
+                                               FontSize="24" TextColor="White"
+                                               HorizontalOptions="CenterAndExpand"
+                                               FontAttributes="Italic" />
+                                    </Grid>
                                         <Label Text="{Binding location}" Grid.Row="5" FontSize="22" TextColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" />
 
                                         <!-- -->

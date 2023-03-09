@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>636545007999-qen1tu4nuk3o1it80t2jqpnqkr7c45cr.apps.googleusercontent.com</string>
+	<string>683928800847-umcqlv2osubib1n75h31j7nhov05cubr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.636545007999-qen1tu4nuk3o1it80t2jqpnqkr7c45cr</string>
+	<string>com.googleusercontent.apps.683928800847-umcqlv2osubib1n75h31j7nhov05cubr</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCzlyxWztWVlhF1hzS7o-YI9hXaXVPXniU</string>
+	<string>AIzaSyAFWGcYjUejfpHbrSq_lqLvdRh2Oi8OmlM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>636545007999</string>
+	<string>683928800847</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.birdclient</string>
 	<key>PROJECT_ID</key>
-	<string>mtchfirebasepoject</string>
+	<string>mtchmkr-766a0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mtchfirebasepoject.appspot.com</string>
+	<string>mtchmkr-766a0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:636545007999:ios:bc92d0a2b2aef7f14f5a4a</string>
+	<string>1:683928800847:ios:a88189f57176d5181c243a</string>
 </dict>
 </plist>

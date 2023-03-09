@@ -76,8 +76,6 @@
 		<string>com.miura.shuttle.izettle</string>
 		<string>com.izettle.cardreader-one</string>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>16</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>MTCHMKR needs permission</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
@@ -86,5 +84,7 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>24</string>
 </dict>
 </plist>

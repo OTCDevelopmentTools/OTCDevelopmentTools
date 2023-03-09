@@ -80,13 +80,13 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             {
                 _progDialog.ShowProgress("Loading...");
                 PlayerBooking obj = new PlayerBooking();
-                obj.createdByUser = Guid.Parse(Preferences.Get("UserId", string.Empty));
-                obj.gameId = _player.gameId;
-                obj.locationId = SelectedLocation.locationId;
-                obj.requestedToUser = _player.userId;
-                obj.date = BookingDate;
-                obj.createdDate = DateTime.Now;
-                obj.isAgreed = false;
+                //obj.createdByUser = Guid.Parse(Preferences.Get("UserId", string.Empty));
+                //obj.gameId = _player.gameId;
+                //obj.locationId = SelectedLocation.locationId;
+                //obj.requestedToUser = _player.userId;
+                //obj.date = BookingDate;
+                //obj.createdDate = DateTime.Now;
+                //obj.isAgreed = false;
 
                 var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(obj);
 
@@ -94,12 +94,12 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 var Result = await PlayerBookingMethod(obj);
                 if (Result)
                 {
-                    await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Player booking successfully.", "Ok");
+                    await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH request sent.", "Ok");
                     App.Current.MainPage.Navigation.PopToRootAsync(true);
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Player booking failed for match.", "Ok");
+                    await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "MTCH request failed for MTCH.", "Ok");
                 }
 
                 _progDialog.HideProgress();

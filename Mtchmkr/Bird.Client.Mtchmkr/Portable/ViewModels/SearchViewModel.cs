@@ -92,7 +92,18 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
         }
 
-        private DateTime? bookingDate = null;
+        private DateTime _currentDelectedDate = DateTime.Now;
+        public DateTime CurrentDelectedDate
+        {
+            get=>_currentDelectedDate;
+            set
+            {
+                _currentDelectedDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private DateTime? bookingDate = DateTime.Now;
         public DateTime? BookingDate
         {
             get
@@ -267,7 +278,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
                 _progDialog.ShowProgress("Loading...");
                 var userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
-                var result = await App.ServiceManager.GetSearchPlayersAsync(SelectedGame.gameId, Minimum, Maximum, Distance, Frame, userId, Convert.ToDateTime(BookingDate));
+                var result = await App.ServiceManager.GetSearchPlayersAsync(SelectedGame.gameId, Minimum, Maximum, Distance, Frame, userId, BookingDate?.ToString("MM/dd/yyyy hh:mm:ss tt"));
                 if (result != null && result.Count > 0)
                 {
                     PlayersItemsSource = new ObservableCollection<PlayerDTO>(result);

@@ -121,6 +121,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
         }
 
+        private bool _isRatingChanging;
         private int rating;
         public int Rating
         {
@@ -129,6 +130,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             {
                 rating = value;
                 OnPropertyChanged("Rating");
+                UpdateCommandMethod();
             }
         }
 
@@ -209,6 +211,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
         }
 
         private UserProfileResponse profileData;
+
         public UserProfileResponse ProfileData
         {
             get { return profileData; }
@@ -219,7 +222,39 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
             }
         }
 
-        
+        private async void UpdateCommandMethod()
+        {
+            if (_isRatingChanging)
+                return;
+            _progDialog.ShowProgress("Loading...");
+
+            ProfileResuest request = new ProfileResuest
+            {
+                userId = Guid.Parse(Preferences.Get("UserId", string.Empty)),
+                email = ProfileData.email,
+                imageData = ProfileData.imageData,
+                imageTitle = ProfileData.imageTitle,
+                name = ProfileData.name,
+                notificationMethod = ProfileData.notificationMethod,
+                place = ProfileData.place,
+                playsAgainst = ProfileData.playsAgainst,
+                preferredgames = ProfileData.preferredgames,
+                radiusLocator = ProfileData.radiusLocator,
+                rating = Rating,
+                regularAvailability = ProfileData.regularAvailability,
+                telephone = ProfileData.telephone,
+                userName = ProfileData.userName
+            };
+
+            var result = await App.ServiceManager.UpdateUserProfileAsync(request);
+
+            if (!result)
+            {
+                await App.Current.MainPage.DisplayAlert(Constants.APP_NAME, "Somthing went wrong, please try again", "Ok");
+            }
+
+            _progDialog.HideProgress();
+        }
 
         public async void GetProfile()
         {
@@ -237,7 +272,10 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
                 Place = result.place;
                 PlaysAgainst = result.playsAgainst;
                 Preferredgames = result.preferredgames;
+                _isRatingChanging = true;
                 Rating = result.rating;
+                await Task.Delay(10);
+                _isRatingChanging = false;
                 RadiusLocator = result.radiusLocator.ToString() + " Miles";
                 NotificationMethod = result.notificationMethod;
             }

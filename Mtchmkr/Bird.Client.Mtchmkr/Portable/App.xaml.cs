@@ -1,7 +1,9 @@
 ﻿//using Bird.Client.Mtchmkr.Portable.Services;
 //using Bird.Client.Mtchmkr.Portable.Views;
 using Bird.Client.Mtchmkr.Business.Repositories;
+using Bird.Client.Mtchmkr.Business.ServiceCenter.Response;
 using Bird.Client.Mtchmkr.Portable.Common;
+using Bird.Client.Mtchmkr.Portable.Interfaces;
 using Bird.Client.Mtchmkr.Portable.Models;
 using Bird.Client.Mtchmkr.Portable.Views;
 using Plugin.FirebasePushNotification;
@@ -128,7 +130,7 @@ namespace Bird.Client.Mtchmkr.Portable
         }
         public void LoadShell()
         {
-            if (!IsUserLoggedIn)
+            if(!Preferences.ContainsKey("UserId"))
             {
                 MainPage = new LoginShell();
             }
@@ -143,10 +145,18 @@ namespace Bird.Client.Mtchmkr.Portable
 
             // Handle when your app starts
             CrossFirebasePushNotification.Current.Subscribe("general");
-            CrossFirebasePushNotification.Current.OnTokenRefresh += (s, p) =>
+            CrossFirebasePushNotification.Current.OnTokenRefresh += async (s, p) =>
             {
                 System.Diagnostics.Debug.WriteLine($"TOKEN REC: {p.Token}");
                 Xamarin.Essentials.Preferences.Set("TokenDevice", p.Token);
+                FcmDeviceInfo requestFcmInfo = new FcmDeviceInfo();
+                requestFcmInfo.deviceId = DependencyService.Get<IBaseUrl>().GetIdentifier();
+                requestFcmInfo.deviceToken = Xamarin.Essentials.Preferences.Get("TokenDevice", string.Empty); ;
+                requestFcmInfo.deviceType = DeviceInfo.Platform.ToString();
+                requestFcmInfo.userId = Guid.Parse(Preferences.Get("UserId", string.Empty));
+                requestFcmInfo.createdDate = DateTime.Now;
+                if (!string.IsNullOrEmpty(Preferences.Get("UserId", string.Empty)))
+                    await App.ServiceManager.InsertFCMInfoAsync(requestFcmInfo);
             };
             System.Diagnostics.Debug.WriteLine($"TOKEN: {CrossFirebasePushNotification.Current.Token}");
 
@@ -159,7 +169,7 @@ namespace Bird.Client.Mtchmkr.Portable
                     {
                         Device.BeginInvokeOnMainThread(() =>
                         {
-                           // mPage.Message = $"{p.Data["body"]}";
+                            // mPage.Message = $"{p.Data["body"]}";
                         });
 
                     }
@@ -185,7 +195,7 @@ namespace Bird.Client.Mtchmkr.Portable
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                       // mPage.Message = p.Identifier;
+                        // mPage.Message = p.Identifier;
                     });
                 }
                 else if (p.Data.ContainsKey("color"))
@@ -204,7 +214,7 @@ namespace Bird.Client.Mtchmkr.Portable
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                       // mPage.Message = $"{p.Data["aps.alert.title"]}";
+                        // mPage.Message = $"{p.Data["aps.alert.title"]}";
                     });
 
                 }

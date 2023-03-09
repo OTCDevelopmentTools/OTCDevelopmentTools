@@ -81,7 +81,7 @@
                     <Label Text="I agree to arrive on time and accept" TextColor="Black" VerticalOptions="Center" />
                 </StackLayout>
                </StackLayout> 
-                <Button Text="Agree and Book Now"  Grid.Row="1" Command="{Binding BookCommand}" Style="{StaticResource FollowButton}" Margin="10" VerticalOptions="End" />
+            <Button Text="Agree and Book Now"  Grid.Row="1" Command="{Binding BookCommand}" Style="{StaticResource FollowButton}" Margin="10" VerticalOptions="End" />
             
         </Grid>
     </ContentPage.Content>

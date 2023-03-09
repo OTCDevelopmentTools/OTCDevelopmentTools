@@ -41,6 +41,7 @@
     <None Remove="Telerik.XamarinForms.RichTextEditor" />
     <None Remove="Telerik.XamarinForms.SkiaSharp" />
     <None Remove="Telerik.Zip" />
+    <None Remove="Plugin.InAppBilling" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
@@ -52,5 +53,6 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
   </ItemGroup>
 </Project>

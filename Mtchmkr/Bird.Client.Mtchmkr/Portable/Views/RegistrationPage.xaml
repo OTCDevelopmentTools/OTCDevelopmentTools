@@ -7,7 +7,8 @@
              x:Class="Bird.Client.Mtchmkr.Portable.Views.RegistrationPage">
     <Shell.NavBarIsVisible>False</Shell.NavBarIsVisible>
     <ContentPage.Content>
-        <Grid  RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+     <ScrollView>
+          <Grid  RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="120"/>
                 <RowDefinition Height="*"/>
@@ -43,7 +44,7 @@
                         <Label Text="Email" TextColor="Black"/>
                         <Label Grid.Column="1" TextColor="{StaticResource Warning}" IsVisible="{Binding InvalidEmail}" Text="Please enter a valid email address" />
                     </Grid>
-                    <local:ExtendedEntry x:Name="emailEntry" HeightRequest="40" HasBorder="True" Text="{Binding Email}" Placeholder="Email" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
+                    <local:ExtendedEntry x:Name="emailEntry" Keyboard="Email" HeightRequest="40" HasBorder="True" Text="{Binding Email}" Placeholder="Email" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="2">
@@ -58,13 +59,9 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="3">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+                    <Grid RowDefinitions="Auto,Auto">
                         <Label Text="Password" TextColor="Black"/>
-                        <Label Grid.Column="1" TextColor="{StaticResource Warning}" Text="{Binding PasswordText}" />
+                        <Label Grid.Row="1" TextColor="{StaticResource Warning}" Text="{Binding PasswordText}" />
                     </Grid>
                     <local:ExtendedEntry x:Name="passwordEntry" Text="{Binding Password1}" Placeholder="Password" IsPassword="{Binding ShowPassword}" HeightRequest="40" HasBorder="True" BorderColor="{StaticResource GoldenColor}" HorizontalOptions="FillAndExpand" />
                 </StackLayout>
@@ -115,5 +112,6 @@
 
         </Grid>
 
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

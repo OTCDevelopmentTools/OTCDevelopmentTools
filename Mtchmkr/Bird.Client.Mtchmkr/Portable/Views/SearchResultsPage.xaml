@@ -107,7 +107,7 @@ xmlns:telerikListView="clr-namespace:Telerik.XamarinForms.DataControls.ListView;
                 </telerikDataControls:RadListView.SelectedItemStyle>
             </telerikDataControls:RadListView>
 
-            <Button Text="Book Now"  Grid.Row="1" Command="{Binding BookCommand}" Style="{StaticResource FollowButton}" Margin="10" VerticalOptions="End" />
+            <Button Text="Send MTCH request"  Grid.Row="1" Command="{Binding BookCommand}" Style="{StaticResource FollowButton}" Margin="10" VerticalOptions="End" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

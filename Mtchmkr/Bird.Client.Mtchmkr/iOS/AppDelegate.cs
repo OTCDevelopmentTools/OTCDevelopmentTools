@@ -41,8 +41,6 @@ namespace Bird.Client.Mtchmkr.iOS
                 })
 
             });
-
-
             return base.FinishedLaunching(app, options);
         }
 

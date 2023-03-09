@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -42,6 +43,7 @@ namespace Bird.Client.Mtchmkr.Business.ServiceCenter.Response
         public int rating { get; set; }
         public string playsAgainst { get; set; }
         public string notificationMethod { get; set; }
+        public string gameId { get; set; }
     }
 
     public class PlayerDTO : INotifyPropertyChanged
@@ -111,14 +113,13 @@ namespace Bird.Client.Mtchmkr.Business.ServiceCenter.Response
 
     public class PlayerBooking
     {
-        public Guid gameId { get; set; }
-        public DateTime date { get; set; }
-        public Guid locationId { get; set; }
-        public Guid requestedToUser { get; set; }
-        public Guid createdByUser { get; set; }
+        public string matchId { get; set; }
+        public string gameId { get; set; }
+        public DateTime matchDate { get; set; }
+        public string locationId { get; set; }
         public DateTime createdDate { get; set; }
-        public bool isAgreed { get; set; }
-        public Guid matchId { get; set; }
+        public List<string> matchRequestUsers { get; set; }
+        public string createdByUser { get; set; }
     }
 }
 

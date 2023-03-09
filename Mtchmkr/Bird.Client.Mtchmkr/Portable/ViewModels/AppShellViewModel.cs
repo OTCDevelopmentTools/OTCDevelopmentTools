@@ -30,6 +30,7 @@ namespace Bird.Client.Mtchmkr.Portable.ViewModels
 
         async Task Logout()
         {
+            Preferences.Clear();
            App.Current.MainPage = new LoginShell();
         }
 

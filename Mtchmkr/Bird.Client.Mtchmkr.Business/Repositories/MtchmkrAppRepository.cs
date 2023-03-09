@@ -64,12 +64,12 @@ namespace Bird.Client.Mtchmkr.Business.Repositories
             return await this.client.CreateGetResponse<List<LocationModel>>($"Match/GetLocations");
         }
 
-        public async Task<List<PlayerDTO>> GetSearchPlayersAsync(Guid gameid, int minRating, int maxrating, int radious, string gameFrame, Guid userId, DateTime bookDate)
+        public async Task<List<PlayerDTO>> GetSearchPlayersAsync(Guid gameid, int minRating, int maxrating, int radious, string gameFrame, Guid userId, string bookDate)
         {
-            return await this.client.CreateGetResponse<List<PlayerDTO>>($"Match/PlaylistForSearchByDate?gameid={gameid}&minRating={minRating}&maxrating={maxrating}&radious={radious}&gameFrame={gameFrame}&UserId={userId}&date1={bookDate}");
+            return await this.client.CreateGetResponse<List<PlayerDTO>>($"Match/PlaylistForSearchByDateWithUserId?gameid={gameid}&minRating={minRating}&maxrating={maxrating}&radious={radious}&gameFrame={gameFrame}&UserId={userId}&date1={bookDate}");
         }
 
-        public async Task<bool> PlayerBookingAsync(List<PlayerBooking> obj)
+        public async Task<bool> PlayerBookingAsync(PlayerBooking obj)
         {
             return await this.client.CreatePostRequest<bool>($"Match", obj);
         }
